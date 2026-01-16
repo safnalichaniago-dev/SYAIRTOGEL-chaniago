@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SYAIR + Card Shio + Kemenangan + BBFS + BEBAS + Lokasi</title>
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1000 0%, #4a3000 50%, #1a1000 100%);
+    margin: 0;
+    padding: 15px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  :root {
+    --elegant-orange: #ff6600;
+    --elegant-gold: #ffcc00;
+    --deep-orange: #cc5500;
+    --light-gold: #fff8e1;
+    --dark-orange-bg: #331a00;
+    --medium-orange-bg: #662c00;
+  }
+
+  .main-card {
+    background: linear-gradient(145deg, #cc6600 0%, #994400 30%, #663300 70%, #cc6600 100%);
+    border: 3px solid var(--elegant-orange);
+    border-radius: 20px;
+    box-shadow: 
+      0 0 30px rgba(255, 102, 0, 0.6),
+      inset 0 0 40px rgba(255, 204, 0, 0.15),
+      0 0 60px rgba(255, 102, 0, 0.3),
+      0 8px 20px rgba(0, 0, 0, 0.6);
+    padding: 25px;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: var(--light-gold);
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Efek kilau mewah */
+  .main-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+      transparent 0%, 
+      rgba(255, 204, 0, 0.1) 25%, 
+      rgba(255, 102, 0, 0.3) 50%, 
+      rgba(255, 204, 0, 0.1) 75%, 
+      transparent 100%);
+    border-radius: 22px;
+    z-index: 1;
+    pointer-events: none;
+    animation: shimmer 3s infinite linear;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -150px 0; }
+    100% { background-position: 150px 0; }
+  }
+
+  /* Efek corner dekoratif */
+  .main-card::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border: 1px solid rgba(255, 204, 0, 0.2);
+    border-radius: 16px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Semua konten di atas efek */
+  .main-card > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .syair-header,
+  .compass-card,
+  .extra-cards .card,
+  .footer-card,
+  .locations-card,
+  .shio-card {
+    background: linear-gradient(145deg, rgba(153, 68, 0, 0.9) 0%, rgba(102, 51, 0, 0.9) 100%);
+    border: 2px solid var(--elegant-orange);
+    border-radius: 15px;
+    box-shadow: 
+      inset 0 0 15px rgba(255, 204, 0, 0.15),
+      0 0 15px rgba(255, 102, 0, 0.4),
+      0 4px 10px rgba(0, 0, 0, 0.4);
+    color: var(--light-gold);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .syair-header {
+    padding: 15px;
+    text-align: center;
+    border: 2px solid var(--elegant-gold);
+  }
+
+  .syair-header h2 {
+    margin: 0;
+    font-size: 22px;
+    text-shadow: 
+      0 0 10px var(--elegant-orange),
+      0 0 20px rgba(255, 102, 0, 0.4),
+      1px 1px 3px rgba(0, 0, 0, 0.7);
+    color: var(--elegant-gold);
+    letter-spacing: 0.5px;
+    font-weight: 700;
+  }
+
+  .LAPAK99-logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--elegant-gold);
+    text-shadow: 
+      0 0 12px var(--elegant-gold),
+      0 0 25px var(--elegant-orange),
+      0 0 40px rgba(255, 204, 0, 0.2),
+      2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin: 10px 0;
+    letter-spacing: 1.5px;
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    background: linear-gradient(45deg, rgba(255, 102, 0, 0.25), rgba(153, 68, 0, 0.25));
+    border-radius: 8px;
+    border: 1px solid var(--elegant-gold);
+  }
+
+  .syair-header .date-text {
+    font-size: 16px;
+    text-shadow: 0 0 6px var(--elegant-gold), 0 0 12px rgba(255, 102, 0, 0.4);
+    margin-top: 8px;
+    color: #ffe6cc;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .syair-header .syair-subtitle {
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 0 0 10px var(--elegant-orange), 1px 1px 3px rgba(0, 0, 0, 0.7);
+    color: #ffcc99;
+    letter-spacing: 0.5px;
+  }
+
+  .divider { 
+    border-top: 1px solid var(--elegant-gold); 
+    margin: 10px 0; 
+    box-shadow: 0 0 6px var(--elegant-gold);
+    opacity: 0.7;
+  }
+
+  .middle-section { 
+    display: flex; 
+    flex-direction: column;
+    gap: 20px; 
+  }
+
+  .compass-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .compass-card {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--elegant-gold);
+  }
+
+  .compass-card img {
+    width: 80%;
+    height: 80%;
+    border-radius: 12px;
+    border: 1px solid var(--elegant-gold);
+    box-shadow: 0 0 12px rgba(255, 204, 0, 0.3);
+  }
+
+  .random-number {
+    position: absolute;
+    color: var(--elegant-gold);
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 
+      0 0 10px var(--elegant-orange),
+      0 0 18px rgba(255, 102, 0, 0.5),
+      1px 1px 3px rgba(0, 0, 0, 0.8);
+    background: rgba(153, 68, 0, 0.7);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--elegant-gold);
+  }
+
+  .top { top: 8px; left: 50%; transform: translateX(-50%); }
+  .bottom { bottom: 8px; left: 50%; transform: translateX(-50%); }
+  .left { left: 8px; top: 50%; transform: translateY(-50%); }
+  .right { right: 8px; top: 50%; transform: translateY(-50%); }
+
+  .shio-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .shio-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    gap: 10px;
+    width: 180px;
+    height: 240px;
+    border: 2px solid var(--elegant-gold);
+  }
+
+  .shio-image {
+    width: 140px;
+    height: 140px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    border: 2px solid var(--elegant-gold);
+    box-shadow: 0 0 12px rgba(255, 204, 0, 0.3);
+  }
+
+  .shio-info h2 {
+    margin: 10px 0 0 0;
+    font-size: 16px;
+    text-shadow: 0 0 10px var(--elegant-orange), 1px 1px 3px rgba(0, 0, 0, 0.7);
+    color: var(--elegant-gold);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-align: center;
+  }
+
+  .shio-info p {
+    font-size: 12px;
+    margin: 6px 0 0 0;
+    color: #ffe6cc;
+    text-align: center;
+    line-height: 1.3;
+    font-weight: 500;
+    padding: 0 5px;
+  }
+
+  .extra-cards {
+    display: flex;
+    gap: 10px;
+  }
+
+  .extra-cards .card {
+    text-align: center;
+    padding: 12px 15px;
+    min-width: 80px;
+    border: 2px solid var(--elegant-gold);
+  }
+
+  .extra-cards h3 {
+    margin: 0;
+    font-size: 16px;
+    text-shadow: 0 0 8px var(--elegant-orange), 1px 1px 3px rgba(0, 0, 0, 0.7);
+    color: var(--elegant-gold);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .extra-cards p {
+    margin: 6px 0 0 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffe6cc;
+    text-shadow: 0 0 8px rgba(255, 102, 0, 0.5);
+  }
+
+  .footer-card {
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffe6cc;
+    line-height: 1.4;
+    border: 2px solid var(--elegant-gold);
+  }
+
+  .link-LAPAK99-outside {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--elegant-gold);
+    text-align: center;
+    text-shadow: 
+      0 0 10px var(--elegant-gold),
+      0 0 20px var(--elegant-orange),
+      1px 1px 3px rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 2;
+    letter-spacing: 1px;
+    padding: 10px;
+    background: linear-gradient(45deg, rgba(255, 102, 0, 0.3), rgba(153, 68, 0, 0.3));
+    border-radius: 8px;
+    border: 1px solid var(--elegant-gold);
+  }
+
+  .locations-card {
+    margin-top: 15px;
+    padding: 15px;
+    text-align: center;
+    border: 2px solid var(--elegant-gold);
+  }
+
+  .locations-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    text-shadow: 0 0 8px var(--elegant-orange), 1px 1px 3px rgba(0, 0, 0, 0.7);
+    color: var(--elegant-gold);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .locations-list span {
+    background: linear-gradient(145deg, rgba(255, 102, 0, 0.7), rgba(153, 68, 0, 0.7));
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 
+      0 0 10px rgba(255, 102, 0, 0.5),
+      0 4px 6px rgba(0, 0, 0, 0.4),
+      inset 0 0 6px rgba(255, 204, 0, 0.15);
+    color: var(--light-gold);
+    display: inline-block;
+    margin: 4px;
+    border: 1px solid var(--elegant-gold);
+    letter-spacing: 0.5px;
+  }
+
+  /* Responsif untuk tablet */
+  @media (min-width: 768px) {
+    .main-card {
+      padding: 30px;
+      max-width: 700px;
+    }
+    
+    .middle-section {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    
+    .compass-row {
+      flex-direction: column;
+      align-items: center;
+      width: 48%;
+    }
+    
+    .shio-row {
+      width: 48%;
+      justify-content: center;
+    }
+    
+    .syair-header h2 {
+      font-size: 24px;
+    }
+    
+    .LAPAK99-logo {
+      font-size: 32px;
+    }
+    
+    .extra-cards {
+      flex-direction: row;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
+  /* Responsif untuk desktop */
+  @media (min-width: 1024px) {
+    .main-card {
+      max-width: 800px;
+      padding: 35px;
+    }
+    
+    .compass-card {
+      width: 200px;
+      height: 200px;
+    }
+    
+    .shio-card {
+      width: 200px;
+      height: 260px;
+    }
+    
+    .shio-image {
+      width: 160px;
+      height: 160px;
+    }
+    
+    .random-number {
+      font-size: 22px;
+      width: 40px;
+      height: 40px;
+    }
+    
+    .extra-cards .card {
+      padding: 15px 20px;
+    }
+    
+    .extra-cards h3 {
+      font-size: 18px;
+    }
+    
+    .extra-cards p {
+      font-size: 16px;
+    }
+  }
+
+  /* Responsif untuk mobile kecil */
+  @media (max-width: 480px) {
+    body {
+      padding: 10px;
+    }
+    
+    .main-card {
+      padding: 15px;
+      border-radius: 15px;
+    }
+    
+    .compass-card {
+      width: 150px;
+      height: 150px;
+    }
+    
+    .shio-card {
+      width: 150px;
+      height: 200px;
+    }
+    
+    .shio-image {
+      width: 120px;
+      height: 120px;
+    }
+    
+    .random-number {
+      font-size: 16px;
+      width: 28px;
+      height: 28px;
+    }
+    
+    .extra-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .extra-cards .card {
+      width: 100%;
+      max-width: 180px;
+    }
+    
+    .LAPAK99-logo {
+      font-size: 24px;
+      padding: 6px 15px;
+    }
+    
+    .syair-header h2 {
+      font-size: 20px;
+    }
+    
+    .link-LAPAK99-outside {
+      font-size: 16px;
+      padding: 8px;
+    }
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="main-card">
+  <!-- SYAIR -->
+  <div class="syair-header">
+    <h2>SYAIR TOGEL</h2>
+    <div class="LAPAK99-logo">LAPAK99</div>
+    <div class="date-text" id="currentDate"></div>
+    <p class="syair-subtitle">SYAIR TOGEL LAPAK99</p>
+  </div>
+
+  <!-- Middle section -->
+  <div class="middle-section">
+    <!-- Compass & BBFS/BEBAS -->
+    <div class="compass-row">
+      <div class="compass-card">
+        <img src="https://i.postimg.cc/J02cS7xF/POSTINGAN-KEMENANGAN-35.png" alt="Kemenangan">
+        <div class="random-number top" id="numTop">0</div>
+        <div class="random-number bottom" id="numBottom">0</div>
+        <div class="random-number left" id="numLeft">0</div>
+        <div class="random-number right" id="numRight">0</div>
+      </div>
+
+      <div class="extra-cards">
+        <div class="card">
+          <h3>BBFS</h3>
+          <p id="bbfsNumbers">1234567</p>
+        </div>
+        <div class="card">
+          <h3>BEBAS</h3>
+          <p id="bebasNumbers">1/1</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shio card -->
+    <div class="shio-row">
+      <div class="shio-card" id="shioCard">
+        <div class="shio-image" id="shioImage"></div>
+        <div class="shio-info">
+          <h2 id="shioName">SHIO</h2>
+          <p id="shioDesc"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer-card" id="footer"></div>
+  <div class="link-LAPAK99-outside">LINKLIST.BIO/LAPAK99</div>
+  <!-- Lokasi Terpopuler -->
+  <div class="locations-card">
+    <h3>PASARAN</h3>
+    <div class="locations-list" id="locationsList"></div>
+  </div>
+</div>
+
+<script>
+  // Tanggal otomatis
+  function updateDate() {
+    const today = new Date();
+    const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+    document.getElementById('currentDate').innerText = today.toLocaleDateString('id-ID', options);
+  }
+
+  // Footer syair
+  const footerTexts = [
+    `Rajin-rajinlah beribadah<br>Jangan lupa salat<br>Dan perbanyak zakat<br>Untuk bekal akhirat`,
+    `Dalam malam yang kelam, rindu membeku<br>Kesedihan menari di antara bayang-bayang<br>`,
+    'Dalam malam yang kelam, langit berurai<br>Rindu membeku dalam angin yang merintih<br>Hati terbelah, diwarnai senyap pilu<br>Kesedihan menari di antara bayang-bayang<br>',
+    'Di ujung hari yang hampa, bintang meredup<br>Menyisakan jejak air mata di cakrawala<br>Cinta yang hilang, seperti debu tertiup<br>Menghilang dalam ruang yang tak bertepi<br>',
+    'Setiap suara angin, menyimpan cerita<br>Tentang harapan yang melayang jauh<br>Di balik awan, gemericik duka<br>Mengiringi langkah yang penuh ragu<br>',
+    'Di tengah tawa, air mata menari lembut<br>Senyum yang tulus, membasahi pipi yang cerah<br>Kebahagiaan mengalir dalam setiap tetes<br>Menjadi pelangi setelah hujan yang reda<br>',
+    'Ketika harapan menjadi nyata, dan mimpi terwujud<br>Rasa syukur menjadikan air mata sebagai saksi<br>Bahagia mengalir, seiring waktu yang berharga<br>Menyatukan jiwa dalam pelukan cinta yang abadi<br>',
+    'Di ujung langit, matahari terbenam lembut<br>Menyeruput warna, melukis cakrawala malam<br>Angin berbisik lembut di antara pepohonan<br>Menyapu jiwa, menenangkan dengan kasih sayang<br>',
+    'Bunga-bunga menari dalam embun pagi<br>Keharuman mereka menggema di udara<br>Setiap kelopak, seolah membawa pesan cinta<br>Mengisi hari dengan keajaiban yang nyata<br>',
+    'Gunung menjulang megah, penuh misteri<br>Berkilau di bawah cahaya bulan yang lembut<br>Sungai mengalir tenang, penuh cerita<br>Menyanyikan lagu yang tak pernah pudar<br>',
+    'Dalam setiap detik, dalam setiap helaan napas<br>Tersimpan keindahan dunia yang abadi<br>Hati yang luluh dalam kerinduan ini<br>Merasakan cinta semesta yang tak pernah mati<br>',
+    'Seorang gadis cantik jelita<br>Telah melintas di depan mata<br>Membuat diri ini terpana<br>Dan juga mendambakan sosoknya<br>',
+    'Wajahnya selalu ada dibenak<br>Membuat tidurku jadi tak nyenyak<br>Apakah ini adalah cinta<br>Atau sekadar terkagum saja<br>',
+    'Namun dalam setiap detik, setiap helaan napas<br>Ada kerinduan yang membekas di hati<br>Seakan jauh di sana, ada tempat yang hilang<br>Tempat di mana cinta dan mimpi bertemu<br>',
+    'Rindu ini mengalir seperti aliran sungai<br>Tak henti mencari, tak pernah puas<br>Dalam keindahan dunia yang abadi<br>Kuharapkan ada satu tempat untuk kita berdua<br>',
+    'Cinta yang ada di ini dada<br>Kian merekah bagai sang bunga<br>Yang telah merekahkan kelopaknya<br>Yang punya warna indah di mata<br>',
+    'Kalau mencinta jangan memaksa<br>Supaya tidak saling menyiksa<br>Mencintalah dengan seikhlas rasa<br>Supaya tidak saling menyiksa<br>',
+    'Jangan engkau buta dalam mencinta<br>Agar kau tidak membabi buta<br>Dalam mencintai sosoknya<br>Dalam mencemburi sosoknya<br>',
+    'Jikalau dia memang jodohnya<br>Pastilah nanti akan berjumpa<br>Jikalau memang bukan jodohnya<br>Marilah coba ikhlaskan saja<br>',
+    'Wahai kau kekasih yang tercinta<br>Dimanakah engkau kini berada<br>Daku sangat ingin kita berjumpa<br>Dan bercanda tawa bersama-sama<br>',
+    'Akan kupanjatkan sebuah doa<br>Untuk dirinya yang kucinta<br>Semoga dia selalu bahagia<br>Dan berada dalam lindungan-Nya<br>',
+    'Aku diam bukan karena tak cinta<br>Aku hanya sedang memendam rasa<br>Yang belum saatnya diungkapkan<br>Yang belum saatnya dicurahkan<br>',
+    'Jangan mencintai karena materi<br>Nanti kita akan jadi merugi<br>Jangan pula cinta karena rupa<br>Nanti cinta kita akan mudah sirna<br>',
+    'Jika dia memang bukan jodohnya<br>Mari diikhlaskan saja dirinya<br>Moga nanti akan kita mendapat<br>Pengganti yang jauh lebih tepat<br>',
+    `Di ujung hari, bintang meredup<br>Cinta yang hilang menghilang dalam ruang tak bertepi`
+  ];
+
+  function randomFooter() {
+    const text = footerTexts[Math.floor(Math.random() * footerTexts.length)];
+    document.getElementById("footer").innerHTML = text;
+  }
+
+  // Shio
+  const shioData = [
+    { name: 'SHIO ULAR', url: 'https://i.postimg.cc/MHf4mQ6T/ular-Photoroom.png', desc: ["SUKA NGINTIP DARI BALIK BATU KAYAK DETEKTIF LICIN","BERGERAK TANPA KAKI","GESIT BANGET","REPTIL BERDARAH DINGIN"] },
+    { name: 'SHIO NAGA', url: 'https://i.postimg.cc/cJqYhX3M/naga-Photoroom.png', desc: ["BERSIN API PAS FLU","PUNYA SISIK, SAYAP, TARING, DAN NAFAS API","SIMBOL KEKUATAN DAN KEBERUNTUNGAN","GAGAH DAN PEMBERANI"] },
+    { name: 'SHIO KELINCI', url: 'https://i.postimg.cc/L89crhvr/069c4397a9288af04691aa1e6ca0c39a-Photoroom.png', desc: ["KUPING PANJANG DAN SUKA LOMPAT-LOMPAT","GIGI DEPANNYA TERUS TUMBUH","BERKEMBANG BIAK CEPAT","KUPING PANJANG"] },
+    { name: 'SHIO HARIMAU', url: 'https://i.postimg.cc/bw0BNPVb/image-Photoroom.png', desc: ["MIRIP KUCING RUMAHAN","PUNYA BELANG UNIK DI TUBUH","KARNIVORA PUNCAK RANTAI MAKANAN","PEMAKAN DAGING"] },
+    { name: 'SHIO KERBAU', url: 'https://i.postimg.cc/SxPTQGcw/17deabf0d02c1a1ef05e0d92fc47b53b-Photoroom.png', desc: ["SUKA MANDI LUMPUR","BERTANDUK BESAR MELENGKUNG","LAMBAN TAPI KUAT","BANTU PEKERJA DI SAWAH"] },
+    { name: 'SHIO TIKUS', url: 'https://i.postimg.cc/VLLDjhRh/572ef90cf873cf0bae134fb10b9e9ce6-Photoroom.png', desc: ["SUKA SEMBUNYI","KATANYA SIH SUKA KEJU!?","SUKA MUNCUL DI FILM KARTUN","PENGERAT"] },
+    { name: 'SHIO BABI', url: 'https://i.postimg.cc/0Q0bncnq/988651d0fb546b5ed57fa5813fce79de-Photoroom.png', desc: ["MAKAN TIDUR","PUNYA PENCIUMAN TAJAM","SUARANYA 'NGOK NGOK'","SUKA DIPANGGIL 'ICA'"] },
+    { name: 'SHIO ANJING', url: 'https://i.postimg.cc/DZ6wLmfK/26edd62a40024a37605788aa04330308-Photoroom.png', desc: ["PENURUT","PENCIUMANNYA TAJAM","BISA SENYUM SAMPAI NGAMBEK","TEMAN BAIK MANUSIA"] },
+    { name: 'SHIO AYAM', url: 'https://i.postimg.cc/BvcSftKP/ebe301829765054ef33f8416cf6e1685-Photoroom.png', desc: ["SIJANTAN BERKOKOK","BETINANYA BERTELUR","BERKOKOK","PUNYA SAYAP TAPI GAK BISA TERBANG"] },
+    { name: 'SHIO MONYET', url: 'https://i.postimg.cc/vmHYMbLK/c2364d161855434c28e5015e412ac631-Photoroom.png', desc: ["SUKA USIL","BISA MENIRU PERILAKU MANUSIA","PRIMATA SOSIAL YANG PINTAR","HABITATNYA BERKELOMPOK"] },
+    { name: 'SHIO KAMBING', url: 'https://i.postimg.cc/tJhQWMNW/25cba09984349edc203468f9d062bb77-Photoroom.png', desc: ["SUKA NYNERUDUK","SUKA RUMPUT TETANGGA","PUPIL MATANYA HORIZONTAL","KAKINYA EMPAT"] },
+    { name: 'SHIO KUDA', url: 'https://i.postimg.cc/MKDgwRs5/49858cc15abf0f6cb87d5acf1df06753-Photoroom.png', desc: ["BISA TIDUR SAMBIL BERDIRI","KAKINYA KUAT DAN LINCAH","PUNYA PONI ALAMI KAYAK MODEL","LARINYA CEPAT"] }
+  ];
+
+  function randomShio() {
+    const shio = shioData[Math.floor(Math.random() * shioData.length)];
+    document.getElementById("shioName").innerText = shio.name;
+    const randomDesc = shio.desc[Math.floor(Math.random() * shio.desc.length)];
+    document.getElementById("shioDesc").innerHTML = randomDesc;
+    document.getElementById("shioImage").style.backgroundImage = `url(${shio.url})`;
+  }
+
+  // Compass angka
+  function randomNumbers() {
+    document.getElementById("numTop").innerText = Math.floor(Math.random()*10);
+    document.getElementById("numBottom").innerText = Math.floor(Math.random()*10);
+    document.getElementById("numLeft").innerText = Math.floor(Math.random()*10);
+    document.getElementById("numRight").innerText = Math.floor(Math.random()*10);
+  }
+
+  // BBFS & BEBAS acak tiap refresh
+  function updateBBFS() {
+    let numbers = '';
+    for (let i = 0; i < 7; i++) {
+      numbers += Math.floor(Math.random()*10);
+    }
+    document.getElementById('bbfsNumbers').innerText = numbers;
+  }
+
+  function updateBEBAS() {
+    const num1 = Math.floor(Math.random()*10);
+    const num2 = Math.floor(Math.random()*10);
+    document.getElementById('bebasNumbers').innerText = `${num1}/${num2}`;
+  }
+
+  // Lokasi acak
+  const locations = ['POIPET','NEVADA','BRUNEI','CHELSEA','HUAHIN','BANGKOK','TOTOMALI','TOTOMACAU', 'HOKIDRAW','SYDNEY','KINGKONG','TOTO CAMBODIA','HONGKONG','MAGNUM4D'];
+  function renderRandomLocation() {
+    const container = document.getElementById('locationsList');
+    container.innerHTML = '';
+    const randomLoc = locations[Math.floor(Math.random() * locations.length)];
+    const span = document.createElement('span');
+    span.innerText = randomLoc;
+    container.appendChild(span);
+  }
+
+  // Init
+  updateDate();
+  randomShio();
+  randomFooter();
+  randomNumbers();
+  updateBBFS();
+  updateBEBAS();
+  renderRandomLocation();
+  setInterval(randomNumbers, 1000);
+</script>
+</body>
+</html>
