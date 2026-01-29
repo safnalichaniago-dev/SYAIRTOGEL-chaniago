@@ -7,46 +7,120 @@
 <style>
   body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, rgba(255, 215, 0, 0.06) 0%, transparent 50%),
+      linear-gradient(135deg, #000000 0%, #0a0a0a 25%, #000000 50%, #0a0a0a 75%, #000000 100%);
     margin: 0;
     padding: 15px;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Efek kilau emas di background */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(255, 215, 0, 0.03) 2px,
+        rgba(255, 215, 0, 0.03) 4px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 2px,
+        rgba(255, 215, 0, 0.02) 2px,
+        rgba(255, 215, 0, 0.02) 4px
+      );
+    pointer-events: none;
+    z-index: 0;
+    animation: shine 10s infinite linear;
+  }
+
+  /* Efek bintang berkelap-kelip */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(2px 2px at 20px 30px, rgba(255, 215, 0, 0.8), transparent),
+      radial-gradient(2px 2px at 40px 70px, rgba(255, 215, 0, 0.6), transparent),
+      radial-gradient(3px 3px at 70px 40px, rgba(255, 215, 0, 1), transparent),
+      radial-gradient(2px 2px at 90px 90px, rgba(255, 215, 0, 0.7), transparent),
+      radial-gradient(3px 3px at 120px 60px, rgba(255, 215, 0, 0.9), transparent),
+      radial-gradient(2px 2px at 150px 30px, rgba(255, 215, 0, 0.5), transparent),
+      radial-gradient(2px 2px at 180px 80px, rgba(255, 215, 0, 0.6), transparent);
+    animation: twinkle 4s infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  @keyframes shine {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100px; }
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
   }
 
   :root {
-    --elegant-silver: #c0c0c0;
-    --elegant-gold: #d4af37;
-    --dark-silver: #808080;
-    --light-silver: #f0f0f0;
-    --dark-bg: #0a0a0a;
-    --medium-bg: #222222;
+    --elegant-gold: #FFD700;
+    --rich-gold: #D4AF37;
+    --dark-gold: #B8860B;
+    --black-gold: #0a0a0a;
+    --light-gold: #FFF8DC;
+    --sparkle-gold: #FFEC8B;
   }
 
   .main-card {
-    background: linear-gradient(145deg, #222222 0%, #111111 30%, #000000 70%, #222222 100%);
-    border: 3px solid var(--elegant-silver);
+    background: 
+      linear-gradient(145deg, rgba(0, 0, 0, 0.9) 0%, rgba(20, 20, 20, 0.95) 100%),
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 1px,
+        rgba(255, 215, 0, 0.05) 1px,
+        rgba(255, 215, 0, 0.05) 2px
+      );
+    border: 3px solid var(--elegant-gold);
     border-radius: 20px;
     box-shadow: 
-      0 0 30px rgba(192, 192, 192, 0.6),
-      inset 0 0 40px rgba(212, 175, 55, 0.15),
-      0 0 60px rgba(192, 192, 192, 0.3),
-      0 8px 20px rgba(0, 0, 0, 0.8);
+      0 0 40px rgba(255, 215, 0, 0.3),
+      inset 0 0 60px rgba(255, 215, 0, 0.1),
+      0 0 100px rgba(255, 215, 0, 0.2),
+      0 10px 30px rgba(0, 0, 0, 0.8);
     padding: 25px;
     width: 100%;
     max-width: 800px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    color: var(--light-silver);
+    color: var(--light-gold);
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
+    z-index: 1;
   }
 
-  /* Efek kilau mewah */
+  /* Efek kilau emas di border */
   .main-card::before {
     content: '';
     position: absolute;
@@ -56,39 +130,38 @@
     bottom: -2px;
     background: linear-gradient(45deg, 
       transparent 0%, 
-      rgba(192, 192, 192, 0.1) 25%, 
-      rgba(212, 175, 55, 0.3) 50%, 
-      rgba(192, 192, 192, 0.1) 75%, 
+      rgba(255, 215, 0, 0.2) 25%, 
+      rgba(255, 215, 0, 0.4) 50%, 
+      rgba(255, 215, 0, 0.2) 75%, 
       transparent 100%);
     border-radius: 22px;
-    z-index: 1;
+    z-index: -1;
     pointer-events: none;
-    animation: shimmer 3s infinite linear;
+    animation: goldShimmer 3s infinite linear;
   }
 
-  @keyframes shimmer {
-    0% { background-position: -150px 0; }
-    100% { background-position: 150px 0; }
+  @keyframes goldShimmer {
+    0% { background-position: -200px 0; }
+    100% { background-position: 200px 0; }
   }
 
-  /* Efek corner dekoratif */
+  /* Efek titik-titik emas */
   .main-card::after {
     content: '';
     position: absolute;
-    top: 8px;
-    left: 8px;
-    right: 8px;
-    bottom: 8px;
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    border-radius: 16px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(255, 215, 0, 0.1) 1px, transparent 2px),
+      radial-gradient(circle at 90% 40%, rgba(255, 215, 0, 0.1) 1px, transparent 2px),
+      radial-gradient(circle at 30% 80%, rgba(255, 215, 0, 0.1) 1px, transparent 2px),
+      radial-gradient(circle at 70% 10%, rgba(255, 215, 0, 0.1) 1px, transparent 2px);
+    background-size: 50px 50px;
     pointer-events: none;
-    z-index: 1;
-  }
-
-  /* Semua konten di atas efek */
-  .main-card > * {
-    position: relative;
-    z-index: 2;
+    z-index: -1;
+    opacity: 0.5;
   }
 
   .syair-header,
@@ -97,33 +170,55 @@
   .footer-card,
   .locations-card,
   .shio-card {
-    background: linear-gradient(145deg, rgba(34, 34, 34, 0.9) 0%, rgba(17, 17, 17, 0.9) 100%);
-    border: 2px solid var(--elegant-silver);
+    background: 
+      linear-gradient(145deg, rgba(20, 20, 20, 0.95) 0%, rgba(0, 0, 0, 0.9) 100%),
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 1px,
+        rgba(255, 215, 0, 0.1) 1px,
+        rgba(255, 215, 0, 0.1) 2px
+      );
+    border: 2px solid var(--elegant-gold);
     border-radius: 15px;
     box-shadow: 
-      inset 0 0 15px rgba(212, 175, 55, 0.15),
-      0 0 15px rgba(192, 192, 192, 0.4),
-      0 4px 10px rgba(0, 0, 0, 0.6);
-    color: var(--light-silver);
+      inset 0 0 20px rgba(255, 215, 0, 0.15),
+      0 0 20px rgba(255, 215, 0, 0.3),
+      0 5px 15px rgba(0, 0, 0, 0.6);
+    color: var(--light-gold);
     position: relative;
     overflow: hidden;
   }
 
   .syair-header {
-    padding: 15px;
+    padding: 20px;
     text-align: center;
-    border: 2px solid var(--elegant-gold);
+    border: 2px solid var(--rich-gold);
+    position: relative;
+  }
+
+  .syair-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent, 
+      var(--elegant-gold), 
+      transparent);
   }
 
   .syair-header h2 {
     margin: 0;
     font-size: 22px;
     text-shadow: 
-      0 0 10px var(--elegant-silver),
-      0 0 20px rgba(212, 175, 55, 0.4),
-      1px 1px 3px rgba(0, 0, 0, 0.8);
+      0 0 15px var(--elegant-gold),
+      0 0 30px rgba(255, 215, 0, 0.5),
+      2px 2px 4px rgba(0, 0, 0, 0.8);
     color: var(--elegant-gold);
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     font-weight: 700;
   }
 
@@ -132,44 +227,51 @@
     font-weight: bold;
     color: var(--elegant-gold);
     text-shadow: 
-      0 0 12px var(--elegant-gold),
-      0 0 25px var(--elegant-silver),
-      0 0 40px rgba(212, 175, 55, 0.2),
-      2px 2px 4px rgba(0, 0, 0, 0.9);
-    margin: 10px 0;
-    letter-spacing: 1.5px;
+      0 0 15px var(--elegant-gold),
+      0 0 30px var(--elegant-gold),
+      0 0 50px rgba(255, 215, 0, 0.3),
+      3px 3px 5px rgba(0, 0, 0, 0.9);
+    margin: 15px 0;
+    letter-spacing: 2px;
     font-family: 'Playfair Display', 'Times New Roman', serif;
     position: relative;
     display: inline-block;
-    padding: 8px 20px;
-    background: linear-gradient(45deg, rgba(34, 34, 34, 0.8), rgba(17, 17, 17, 0.8));
-    border-radius: 8px;
+    padding: 10px 25px;
+    background: linear-gradient(45deg, rgba(255, 215, 0, 0.15), rgba(212, 175, 55, 0.15));
+    border-radius: 10px;
     border: 1px solid var(--elegant-gold);
+  }
+
+  .market-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--elegant-gold);
+    text-shadow: 
+      0 0 10px var(--elegant-gold),
+      0 0 20px rgba(255, 215, 0, 0.6),
+      1px 1px 3px rgba(0, 0, 0, 0.7);
+    margin: 10px 0 15px 0;
+    letter-spacing: 1.5px;
+    background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), rgba(212, 175, 55, 0.1));
+    padding: 8px 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
   }
 
   .syair-header .date-text {
     font-size: 16px;
-    text-shadow: 0 0 6px var(--elegant-gold), 0 0 12px rgba(192, 192, 192, 0.4);
-    margin-top: 8px;
-    color: #e0e0e0;
+    text-shadow: 0 0 8px var(--elegant-gold), 0 0 15px rgba(255, 215, 0, 0.4);
+    margin-top: 10px;
+    color: #FFEC8B;
     font-weight: 600;
-    letter-spacing: 0.5px;
-  }
-
-  .syair-header .syair-subtitle {
-    margin-top: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    text-shadow: 0 0 10px var(--elegant-silver), 1px 1px 3px rgba(0, 0, 0, 0.8);
-    color: #d4d4d4;
     letter-spacing: 0.5px;
   }
 
   .divider { 
     border-top: 1px solid var(--elegant-gold); 
-    margin: 10px 0; 
-    box-shadow: 0 0 6px var(--elegant-gold);
-    opacity: 0.7;
+    margin: 15px 0; 
+    box-shadow: 0 0 10px var(--elegant-gold);
+    opacity: 0.5;
   }
 
   .middle-section { 
@@ -192,15 +294,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid var(--elegant-gold);
+    border: 2px solid var(--rich-gold);
+  }
+
+  .compass-card::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 12px;
+    pointer-events: none;
   }
 
   .compass-card img {
     width: 80%;
     height: 80%;
     border-radius: 12px;
-    border: 1px solid var(--elegant-gold);
-    box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+    border: 2px solid var(--elegant-gold);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
   }
 
   .random-number {
@@ -209,17 +323,18 @@
     font-size: 20px;
     font-weight: bold;
     text-shadow: 
-      0 0 10px var(--elegant-silver),
-      0 0 18px rgba(212, 175, 55, 0.5),
-      1px 1px 3px rgba(0, 0, 0, 0.9);
-    background: rgba(34, 34, 34, 0.9);
-    width: 35px;
-    height: 35px;
+      0 0 15px var(--elegant-gold),
+      0 0 25px rgba(255, 215, 0, 0.6),
+      2px 2px 3px rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.7);
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    border: 1px solid var(--elegant-gold);
+    border: 2px solid var(--elegant-gold);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
   }
 
   .top { top: 8px; left: 50%; transform: translateX(-50%); }
@@ -239,11 +354,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 12px;
-    gap: 10px;
+    padding: 15px;
+    gap: 15px;
     width: 180px;
     height: 240px;
-    border: 2px solid var(--elegant-gold);
+    border: 2px solid var(--rich-gold);
   }
 
   .shio-image {
@@ -254,13 +369,13 @@
     background-position: center;
     border-radius: 10px;
     border: 2px solid var(--elegant-gold);
-    box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
   }
 
   .shio-info h2 {
     margin: 10px 0 0 0;
     font-size: 16px;
-    text-shadow: 0 0 10px var(--elegant-silver), 1px 1px 3px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 0 15px var(--elegant-gold), 2px 2px 3px rgba(0, 0, 0, 0.7);
     color: var(--elegant-gold);
     font-weight: 700;
     letter-spacing: 0.5px;
@@ -269,10 +384,10 @@
 
   .shio-info p {
     font-size: 12px;
-    margin: 6px 0 0 0;
-    color: #e0e0e0;
+    margin: 8px 0 0 0;
+    color: #FFEC8B;
     text-align: center;
-    line-height: 1.3;
+    line-height: 1.4;
     font-weight: 500;
     padding: 0 5px;
   }
@@ -284,36 +399,36 @@
 
   .extra-cards .card {
     text-align: center;
-    padding: 12px 15px;
-    min-width: 80px;
-    border: 2px solid var(--elegant-gold);
+    padding: 15px;
+    min-width: 90px;
+    border: 2px solid var(--rich-gold);
   }
 
   .extra-cards h3 {
     margin: 0;
     font-size: 16px;
-    text-shadow: 0 0 8px var(--elegant-silver), 1px 1px 3px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 0 12px var(--elegant-gold), 2px 2px 3px rgba(0, 0, 0, 0.7);
     color: var(--elegant-gold);
     font-weight: 700;
     letter-spacing: 0.5px;
   }
 
   .extra-cards p {
-    margin: 6px 0 0 0;
+    margin: 10px 0 0 0;
     font-size: 14px;
     font-weight: bold;
-    color: #e0e0e0;
-    text-shadow: 0 0 8px rgba(192, 192, 192, 0.5);
+    color: #FFEC8B;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
   }
 
   .footer-card {
-    padding: 15px;
+    padding: 20px;
     text-align: center;
     font-size: 14px;
     font-weight: 600;
-    color: #e0e0e0;
-    line-height: 1.4;
-    border: 2px solid var(--elegant-gold);
+    color: #FFEC8B;
+    line-height: 1.5;
+    border: 2px solid var(--rich-gold);
   }
 
   .link-LAPAK99-outside {
@@ -323,49 +438,61 @@
     color: var(--elegant-gold);
     text-align: center;
     text-shadow: 
-      0 0 10px var(--elegant-gold),
-      0 0 20px var(--elegant-silver),
-      1px 1px 3px rgba(0, 0, 0, 0.9);
+      0 0 15px var(--elegant-gold),
+      0 0 30px var(--elegant-gold),
+      2px 2px 4px rgba(0, 0, 0, 0.8);
     position: relative;
     z-index: 2;
-    letter-spacing: 1px;
-    padding: 10px;
-    background: linear-gradient(45deg, rgba(34, 34, 34, 0.8), rgba(17, 17, 17, 0.8));
-    border-radius: 8px;
+    letter-spacing: 1.5px;
+    padding: 12px;
+    background: linear-gradient(45deg, rgba(255, 215, 0, 0.2), rgba(212, 175, 55, 0.2));
+    border-radius: 10px;
     border: 1px solid var(--elegant-gold);
+    transition: all 0.3s ease;
+  }
+
+  .link-LAPAK99-outside:hover {
+    background: linear-gradient(45deg, rgba(255, 215, 0, 0.3), rgba(212, 175, 55, 0.3));
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
   }
 
   .locations-card {
     margin-top: 15px;
-    padding: 15px;
+    padding: 20px;
     text-align: center;
-    border: 2px solid var(--elegant-gold);
+    border: 2px solid var(--rich-gold);
   }
 
   .locations-card h3 {
-    margin: 0 0 10px 0;
+    margin: 0 0 15px 0;
     font-size: 16px;
-    text-shadow: 0 0 8px var(--elegant-silver), 1px 1px 3px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 0 12px var(--elegant-gold), 2px 2px 3px rgba(0, 0, 0, 0.7);
     color: var(--elegant-gold);
     font-weight: 700;
     letter-spacing: 0.5px;
   }
 
   .locations-list span {
-    background: linear-gradient(145deg, rgba(192, 192, 192, 0.3), rgba(136, 136, 136, 0.3));
-    padding: 8px 15px;
-    border-radius: 10px;
+    background: linear-gradient(145deg, rgba(255, 215, 0, 0.3), rgba(212, 175, 55, 0.3));
+    padding: 10px 20px;
+    border-radius: 12px;
     font-weight: bold;
     font-size: 14px;
     box-shadow: 
-      0 0 10px rgba(192, 192, 192, 0.5),
-      0 4px 6px rgba(0, 0, 0, 0.5),
-      inset 0 0 6px rgba(212, 175, 55, 0.15);
-    color: var(--light-silver);
+      0 0 15px rgba(255, 215, 0, 0.4),
+      0 5px 10px rgba(0, 0, 0, 0.5),
+      inset 0 0 10px rgba(255, 215, 0, 0.2);
+    color: var(--light-gold);
     display: inline-block;
-    margin: 4px;
+    margin: 5px;
     border: 1px solid var(--elegant-gold);
     letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+  }
+
+  .locations-list span:hover {
+    background: linear-gradient(145deg, rgba(255, 215, 0, 0.4), rgba(212, 175, 55, 0.4));
+    transform: translateY(-2px);
   }
 
   /* Responsif untuk tablet */
@@ -399,6 +526,10 @@
       font-size: 32px;
     }
     
+    .market-name {
+      font-size: 22px;
+    }
+    
     .extra-cards {
       flex-direction: row;
       justify-content: center;
@@ -430,12 +561,12 @@
     
     .random-number {
       font-size: 22px;
-      width: 40px;
-      height: 40px;
+      width: 45px;
+      height: 45px;
     }
     
     .extra-cards .card {
-      padding: 15px 20px;
+      padding: 18px 25px;
     }
     
     .extra-cards h3 {
@@ -475,8 +606,8 @@
     
     .random-number {
       font-size: 16px;
-      width: 28px;
-      height: 28px;
+      width: 32px;
+      height: 32px;
     }
     
     .extra-cards {
@@ -491,7 +622,11 @@
     
     .LAPAK99-logo {
       font-size: 24px;
-      padding: 6px 15px;
+      padding: 8px 20px;
+    }
+    
+    .market-name {
+      font-size: 18px;
     }
     
     .syair-header h2 {
@@ -500,7 +635,7 @@
     
     .link-LAPAK99-outside {
       font-size: 16px;
-      padding: 8px;
+      padding: 10px;
     }
   }
 </style>
@@ -513,8 +648,10 @@
   <div class="syair-header">
     <h2>SYAIR TOGEL</h2>
     <div class="LAPAK99-logo">LAPAK99</div>
+    <!-- Nama Pasaran -->
+    <div class="market-name" id="marketName">PASARAN</div>
+    <!-- Tanggal -->
     <div class="date-text" id="currentDate"></div>
-    <p class="syair-subtitle">SYAIR TOGEL LAPAK99</p>
   </div>
 
   <!-- Middle section -->
@@ -569,6 +706,20 @@
     const today = new Date();
     const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
     document.getElementById('currentDate').innerText = today.toLocaleDateString('id-ID', options);
+  }
+
+  // Daftar pasaran
+  const markets = [
+    'SYDNEY', 'SINGAPORE', 'HONGKONG', 'MACAU', 
+    'POIPET', 'BRUNEI', 'NEVADA', 'CHELSEA', 
+    'HUAHIN', 'BANGKOK', 'TOTOMALI', 'TOTOMACAU',
+    'HOKIDRAW', 'KINGKONG', 'TOTO CAMBODIA', 'MAGNUM4D'
+  ];
+
+  // Fungsi untuk memilih pasaran acak
+  function updateMarket() {
+    const randomMarket = markets[Math.floor(Math.random() * markets.length)];
+    document.getElementById('marketName').innerText = randomMarket;
   }
 
   // Footer syair
@@ -665,6 +816,7 @@
 
   // Init
   updateDate();
+  updateMarket(); // Pasaran acak
   randomShio();
   randomFooter();
   randomNumbers();
