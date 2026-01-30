@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -169,6 +168,16 @@
     display: inline-block;
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
     font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pasaran-name:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
   }
 
   .syair-header .date-text {
@@ -390,6 +399,7 @@
     
     .pasaran-name {
       font-size: 22px;
+      min-height: 45px;
     }
     
     .extra-cards {
@@ -449,6 +459,7 @@
     
     .pasaran-name {
       font-size: 24px;
+      min-height: 50px;
     }
     
     .LAPAK99-logo {
@@ -514,6 +525,7 @@
     .pasaran-name {
       font-size: 18px;
       padding: 4px 12px;
+      min-height: 35px;
     }
     
     .syair-header h2 {
@@ -530,10 +542,9 @@
   <div class="syair-header">
     <h2>SYAIR TOGEL</h2>
     <div class="LAPAK99-logo">LAPAK99</div>
-    <div class="pasaran-label"> pasaran</div>
-    <div class="pasaran-name">MAGNUM4D</div>
+    <div class="pasaran-label">pasaran</div>
+    <div class="pasaran-name" id="pasaranDisplay">MAGNUM4D</div>
     <div class="date-text" id="currentDate"></div>
-    
   </div>
 
   <!-- Middle section -->
@@ -577,6 +588,52 @@
 </div>
 
 <script>
+  // Data pasaran sesuai permintaan
+  const pasaranList = [
+    "TOTO MACAU",
+    "HOKI DRAW",
+    "SYDNEY LOTTO",
+    "BRUNEI",
+    "CHELSEA",
+    "TOTO MALI",
+    "POIPET",
+    "HUAHIN",
+    "KING KONG4D",
+    "PCSO",
+    "NEVADA",
+    "HONGKONG",
+    "KENTUCKY",
+    "BANGKOK",
+    "FLORIDA",
+    "NEW YORK",
+    "OREGON",
+    "CALIFORNIA",
+    "TOTO CAMBODIA LIVE",
+    "CAROLINA",
+    "BULLSEYE",
+    "SINGAPORE",
+    "MAGNUM4D"
+  ];
+
+  // Fungsi untuk mendapatkan pasaran acak
+  function getRandomPasaran() {
+    const randomIndex = Math.floor(Math.random() * pasaranList.length);
+    return pasaranList[randomIndex];
+  }
+
+  // Fungsi untuk update nama pasaran
+  function updatePasaran() {
+    const pasaranDisplay = document.getElementById('pasaranDisplay');
+    const randomPasaran = getRandomPasaran();
+    pasaranDisplay.textContent = randomPasaran;
+    
+    // Tambahkan efek visual saat berubah
+    pasaranDisplay.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      pasaranDisplay.style.transform = 'scale(1)';
+    }, 150);
+  }
+
   // Tanggal otomatis
   function updateDate() {
     const today = new Date();
@@ -666,15 +723,24 @@
   }
 
   // Init semua fungsi
-  updateDate();
-  randomShio();
-  randomFooter();
-  randomNumbers();
-  updateBBFS();
-  updateBEBAS();
-  
+  function initializePage() {
+    updateDate();
+    updatePasaran();
+    randomShio();
+    randomFooter();
+    randomNumbers();
+    updateBBFS();
+    updateBEBAS();
+  }
+
+  // Panggil fungsi inisialisasi saat halaman dimuat
+  document.addEventListener('DOMContentLoaded', initializePage);
+
   // Update angka kompas setiap detik
   setInterval(randomNumbers, 1000);
+  
+  // OPSIONAL: Update pasaran setiap 10 detik (bisa diaktifkan jika ingin)
+  // setInterval(updatePasaran, 10000);
 </script>
 </body>
 </html>
