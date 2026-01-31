@@ -1,691 +1,1042 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SYAIR TOGEL LAPAK99</title>
-    <style>
-        /* Reset dan dasar */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SYAIR + Card Shio + Kemenangan + BBFS + BEBAS + Lokasi</title>
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    margin: 0;
+    padding: 15px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: #000000;
-            margin: 0;
-            padding: 20px;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            overflow-x: hidden;
-        }
+  /* Background dengan efek gradient dan pattern */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba(255, 102, 0, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 153, 51, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(255, 165, 0, 0.1) 0%, transparent 50%);
+    background-size: cover;
+    opacity: 0.7;
+    z-index: -1;
+  }
 
-        /* Background Akatsuki */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://i.imgur.com/6qVp8sN.png');
-            background-size: 300px;
-            background-repeat: no-repeat;
-            background-position: center;
-            opacity: 0.1;
-            z-index: -1;
-        }
+  :root {
+    --primary-orange: #FF6600;
+    --secondary-orange: #FF9900;
+    --dark-orange: #CC5500;
+    --light-orange: #FF9933;
+    --accent-gold: #FFCC00;
+    --card-bg: rgba(30, 20, 10, 0.9);
+    --text-white: #ffffff;
+    --text-light: #FFF8E1;
+    --text-gold: #FFD700;
+    --border-glow: rgba(255, 102, 0, 0.6);
+  }
 
-        /* Background bunga berwarna */
-        .flower-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            pointer-events: none;
-            overflow: hidden;
-        }
+  .main-card {
+    background: 
+      linear-gradient(135deg, 
+        rgba(51, 25, 0, 0.9) 0%,
+        rgba(77, 38, 0, 0.9) 25%,
+        rgba(102, 51, 0, 0.9) 50%,
+        rgba(128, 64, 0, 0.9) 75%,
+        rgba(153, 76, 0, 0.9) 100%
+      ),
+      url('https://i.postimg.cc/MHbrMxFH/qq.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    box-shadow: 
+      0 0 50px rgba(255, 102, 0, 0.5),
+      inset 0 0 30px rgba(255, 153, 51, 0.2),
+      0 8px 40px rgba(0, 0, 0, 0.8),
+      0 0 0 1px rgba(255, 102, 0, 0.3);
+    padding: 25px;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: var(--text-white);
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+  }
 
-        .flower {
-            position: absolute;
-            opacity: 0.2;
-            filter: blur(0.5px);
-            animation: float 20s infinite linear;
-        }
+  .main-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(45deg, 
+      var(--primary-orange), 
+      var(--secondary-orange), 
+      var(--accent-gold), 
+      var(--light-orange),
+      var(--primary-orange)
+    );
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
 
-        .flower-red { color: #FF6B6B; }
-        .flower-orange { color: #FFA500; }
-        .flower-yellow { color: #FFD93D; }
-        .flower-purple { color: #6B5B95; }
-        .flower-pink { color: #FF9FF3; }
+  .main-card::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border: 1px solid rgba(255, 153, 51, 0.2);
+    border-radius: 16px;
+    pointer-events: none;
+    z-index: 1;
+    box-shadow: 
+      inset 0 0 30px rgba(255, 102, 0, 0.15),
+      inset 0 0 60px rgba(255, 153, 51, 0.1);
+  }
 
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); }
-            100% { transform: translateY(-100px) rotate(360deg); }
-        }
+  .main-card > * {
+    position: relative;
+    z-index: 2;
+  }
 
-        /* BACKGROUND GAMBAR UTAMA - FULL WIDTH & HEIGHT */
-        .main-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://i.postimg.cc/MHbrMxFH/qq.jpg');
-            background-size: cover; /* Ini yang membuat gambar full width */
-            background-repeat: no-repeat;
-            background-position: center;
-            opacity: 0.15;
-            z-index: 1;
-            border-radius: 20px;
-            pointer-events: none;
-        }
+  .syair-header,
+  .compass-card,
+  .extra-cards .card,
+  .footer-card,
+  .shio-card {
+    background: linear-gradient(145deg, 
+      rgba(77, 38, 0, 0.9) 0%, 
+      rgba(102, 51, 0, 0.9) 100%
+    );
+    border: 1px solid rgba(255, 102, 0, 0.4);
+    border-radius: 15px;
+    box-shadow: 
+      inset 0 0 20px rgba(255, 153, 51, 0.15),
+      0 4px 25px rgba(0, 0, 0, 0.5),
+      0 0 20px rgba(255, 102, 0, 0.2);
+    color: var(--text-white);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+  }
 
-        /* Konten di atas background */
-        .main-card > * {
-            position: relative;
-            z-index: 2;
-        }
+  .syair-header {
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 102, 0, 0.5);
+    background: linear-gradient(145deg, 
+      rgba(77, 38, 0, 0.95) 0%, 
+      rgba(102, 51, 0, 0.95) 100%
+    );
+    position: relative;
+  }
 
-        /* Variabel warna */
-        :root {
-            --orange-primary: #CC6804;
-            --orange-secondary: #E07A0E;
-            --orange-dark: #A85503;
-            --orange-light: #F5A742;
-            --text-white: #ffffff;
-            --text-light: #f0f0f0;
-        }
+  .syair-header::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(45deg, 
+      transparent 0%, 
+      rgba(255, 102, 0, 0.2) 25%, 
+      rgba(255, 153, 51, 0.2) 50%, 
+      rgba(255, 102, 0, 0.2) 75%, 
+      transparent 100%
+    );
+    border-radius: 15px;
+    z-index: -1;
+  }
 
-        /* Main card container - UKURAN TETAP */
-        .main-card {
-            background: linear-gradient(145deg, 
-                rgba(204, 104, 4, 0.9) 0%, 
-                rgba(224, 122, 14, 0.9) 30%, 
-                rgba(204, 104, 4, 0.9) 70%, 
-                rgba(224, 122, 14, 0.9) 100%
-            );
-            border: 3px solid #ffffff;
-            border-radius: 20px;
-            box-shadow: 
-                0 0 30px rgba(204, 104, 4, 0.8),
-                inset 0 0 40px rgba(255, 255, 255, 0.2),
-                0 0 60px rgba(204, 104, 4, 0.5),
-                0 8px 20px rgba(0, 0, 0, 0.5);
-            padding: 25px;
-            width: 100%;
-            max-width: 800px; /* MAKSIMAL LEBAR TETAP */
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            color: var(--text-white);
-            position: relative;
-            overflow: hidden;
-        }
+  .syair-header h2 {
+    margin: 0;
+    font-size: 22px;
+    text-shadow: 
+      0 0 15px rgba(255, 153, 51, 0.8),
+      0 0 25px rgba(255, 102, 0, 0.6),
+      2px 2px 4px rgba(0, 0, 0, 0.4);
+    color: var(--text-gold);
+    letter-spacing: 1.5px;
+    font-weight: 800;
+    background: linear-gradient(to right, 
+      #FFCC00, 
+      #FF9900, 
+      #FF6600, 
+      #FF9900, 
+      #FFCC00
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+  }
 
-        /* Styling untuk konten */
-        .syair-header,
-        .compass-card,
-        .extra-cards .card,
-        .footer-card,
-        .shio-card {
-            background: linear-gradient(145deg, 
-                rgba(204, 104, 4, 0.9) 0%, 
-                rgba(224, 122, 14, 0.9) 100%
-            );
-            border: 2px solid #ffffff;
-            border-radius: 15px;
-            box-shadow: 
-                inset 0 0 15px rgba(255, 255, 255, 0.2),
-                0 0 15px rgba(0, 0, 0, 0.3),
-                0 4px 10px rgba(0, 0, 0, 0.3);
-            color: var(--text-white);
-            position: relative;
-            overflow: hidden;
-        }
+  .logo-image-container {
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-        .syair-header {
-            padding: 15px;
-            text-align: center;
-            border: 2px solid #ffffff;
-        }
+  .lapak-logo-img {
+    max-width: 250px;
+    height: auto;
+    filter: 
+      drop-shadow(0 0 15px rgba(255, 153, 51, 0.8))
+      drop-shadow(0 0 30px rgba(255, 102, 0, 0.6))
+      drop-shadow(0 0 45px rgba(255, 153, 51, 0.4));
+    transition: all 0.4s ease;
+  }
 
-        .syair-header h2 {
-            margin: 0;
-            font-size: 22px;
-            text-shadow: 
-                0 0 10px rgba(255, 255, 255, 0.5),
-                0 0 20px rgba(255, 255, 255, 0.3),
-                2px 2px 4px rgba(0, 0, 0, 0.2);
-            color: var(--text-white);
-            letter-spacing: 0.5px;
-            font-weight: 700;
-        }
+  .lapak-logo-img:hover {
+    transform: scale(1.08);
+    filter: 
+      drop-shadow(0 0 20px rgba(255, 153, 51, 1))
+      drop-shadow(0 0 40px rgba(255, 102, 0, 0.8))
+      drop-shadow(0 0 60px rgba(255, 153, 51, 0.6));
+  }
 
-        .LAPAK99-logo {
-            font-size: 32px;
-            font-weight: bold;
-            color: var(--text-white);
-            text-shadow: 
-                0 0 12px rgba(255, 255, 255, 0.8),
-                0 0 25px rgba(255, 255, 255, 0.5),
-                2px 2px 4px rgba(0, 0, 0, 0.3);
-            margin: 10px 0 0 0;
-            letter-spacing: 1px;
-            font-family: 'Bree Serif', serif;
-            position: relative;
-            display: inline-block;
-            padding: 8px 20px;
-            background: linear-gradient(45deg, 
-                rgba(204, 104, 4, 0.8), 
-                rgba(224, 122, 14, 0.8)
-            );
-            border-radius: 8px;
-            border: 1px solid #ffffff;
-        }
+  .pasaran-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-light);
+    text-shadow: 0 0 8px rgba(255, 153, 51, 0.6);
+    margin: 8px 0 0 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, 
+      rgba(255, 204, 0, 0.3), 
+      rgba(255, 153, 51, 0.3)
+    );
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: inline-block;
+  }
 
-        .pasaran-label {
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--text-white);
-            text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
-            margin: 8px 0 0 0;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            font-family: 'Poppins', sans-serif;
-        }
+  .pasaran-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text-white);
+    text-shadow: 
+      0 0 12px rgba(255, 153, 51, 0.9),
+      0 0 20px rgba(255, 102, 0, 0.7),
+      0 0 30px rgba(255, 153, 51, 0.5);
+    margin: 10px 0 15px 0;
+    letter-spacing: 1.5px;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, 
+      rgba(255, 102, 0, 0.4), 
+      rgba(255, 153, 51, 0.4),
+      rgba(255, 204, 0, 0.4)
+    );
+    border-radius: 12px;
+    border: 1px solid rgba(255, 153, 51, 0.5);
+    display: inline-block;
+    box-shadow: 
+      inset 0 0 15px rgba(255, 255, 255, 0.1),
+      0 0 25px rgba(255, 102, 0, 0.3),
+      0 5px 15px rgba(0, 0, 0, 0.4);
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
 
-        .pasaran-name {
-            font-size: 20px;
-            font-weight: bold;
-            color: var(--text-white);
-            text-shadow: 
-                0 0 10px rgba(255, 255, 255, 0.7),
-                0 0 20px rgba(255, 255, 255, 0.5),
-                0 0 30px rgba(255, 255, 255, 0.3);
-            margin: 0 0 10px 0;
-            letter-spacing: 1px;
-            padding: 6px 15px;
-            background: linear-gradient(45deg, 
-                rgba(204, 104, 4, 0.9), 
-                rgba(224, 122, 14, 0.9)
-            );
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.7);
-            display: inline-block;
-            box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-            font-family: 'Poppins', sans-serif;
-            transition: all 0.3s ease;
-            min-height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+  .syair-header .date-text {
+    font-size: 16px;
+    text-shadow: 0 0 8px rgba(255, 153, 51, 0.4);
+    margin-top: 12px;
+    color: var(--text-light);
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    font-family: 'Poppins', sans-serif;
+    padding: 8px 20px;
+    background: rgba(255, 102, 0, 0.1);
+    border-radius: 10px;
+    display: inline-block;
+  }
 
-        .pasaran-name:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-        }
+  .divider { 
+    height: 2px;
+    background: linear-gradient(to right, 
+      transparent, 
+      rgba(255, 153, 51, 0.6), 
+      transparent
+    );
+    margin: 15px 0; 
+    border: none;
+    box-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
+  }
 
-        .syair-header .date-text {
-            font-size: 16px;
-            text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
-            margin-top: 8px;
-            color: var(--text-light);
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            font-family: 'Poppins', sans-serif;
-        }
+  .middle-section { 
+    display: flex; 
+    flex-direction: column;
+    gap: 20px; 
+  }
 
-        .middle-section { 
-            display: flex; 
-            flex-direction: column;
-            gap: 20px; 
-        }
+  .compass-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
 
-        .compass-row {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+  .compass-card {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 153, 51, 0.4);
+    background: linear-gradient(145deg, 
+      rgba(77, 38, 0, 0.9) 0%, 
+      rgba(102, 51, 0, 0.9) 100%
+    );
+  }
 
-        .compass-card {
-            position: relative;
-            width: 180px;
-            height: 180px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 2px solid #ffffff;
-        }
+  .compass-card img {
+    width: 80%;
+    height: 80%;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 153, 51, 0.3);
+    box-shadow: 
+      inset 0 0 15px rgba(255, 255, 255, 0.08),
+      0 0 20px rgba(0, 0, 0, 0.4);
+    filter: brightness(1.2) contrast(1.1) saturate(1.1);
+  }
 
-        .compass-card img {
-            width: 80%;
-            height: 80%;
-            border-radius: 12px;
-            border: 1px solid #ffffff;
-            box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
-        }
+  /* STYLE UNTUK ANGKA RANDOM DI KOMPASS - STATIS & UKURAN KECIL */
+  .random-number {
+    position: absolute;
+    color: var(--text-white);
+    font-size: 16px; /* Ukuran diperkecil */
+    font-weight: 700; /* Ketebalan dikurangi */
+    text-shadow: 
+      0 0 8px rgba(255, 153, 51, 0.8),
+      0 0 15px rgba(255, 102, 0, 0.6),
+      1px 1px 3px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(145deg, 
+      var(--primary-orange), 
+      var(--secondary-orange),
+      var(--light-orange)
+    );
+    width: 35px; /* Ukuran diperkecil */
+    height: 35px; /* Ukuran diperkecil */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px; /* Sudut lebih kecil */
+    border: 1px solid rgba(255, 204, 0, 0.6); /* Border lebih tipis */
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 
+      0 0 15px rgba(255, 102, 0, 0.5),
+      inset 0 0 8px rgba(255, 255, 255, 0.2),
+      0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    line-height: 1;
+    text-align: center;
+    min-width: 35px;
+    min-height: 35px;
+    /* HAPUS SEMUA ANIMASI */
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
 
-        .random-number {
-            position: absolute;
-            color: #ffffff;
-            font-size: 20px;
-            font-weight: bold;
-            text-shadow: 
-                0 0 10px rgba(255, 255, 255, 0.7),
-                0 0 18px rgba(255, 255, 255, 0.5),
-                1px 1px 3px rgba(0, 0, 0, 0.3);
-            background: rgba(204, 104, 4, 0.9);
-            width: 35px;
-            height: 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            border: 1px solid #ffffff;
-            font-family: 'Poppins', sans-serif;
-        }
+  .top { 
+    top: 8px; 
+    left: 50%; 
+    transform: translateX(-50%) !important; 
+  }
+  .bottom { 
+    bottom: 8px; 
+    left: 50%; 
+    transform: translateX(-50%) !important; 
+  }
+  .left { 
+    left: 8px; 
+    top: 50%; 
+    transform: translateY(-50%) !important; 
+  }
+  .right { 
+    right: 8px; 
+    top: 50%; 
+    transform: translateY(-50%) !important; 
+  }
 
-        .top { top: 8px; left: 50%; transform: translateX(-50%); }
-        .bottom { bottom: 8px; left: 50%; transform: translateX(-50%); }
-        .left { left: 8px; top: 50%; transform: translateY(-50%); }
-        .right { right: 8px; top: 50%; transform: translateY(-50%); }
+  .shio-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
 
-        .shio-row {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+  .shio-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    gap: 12px;
+    width: 180px;
+    height: 240px;
+    border: 1px solid rgba(255, 153, 51, 0.4);
+    background: linear-gradient(145deg, 
+      rgba(77, 38, 0, 0.9) 0%, 
+      rgba(102, 51, 0, 0.9) 100%
+    );
+  }
 
-        .shio-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 12px;
-            gap: 10px;
-            width: 180px;
-            height: 240px;
-            border: 2px solid #ffffff;
-        }
+  .shio-image {
+    width: 140px;
+    height: 140px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 153, 51, 0.3);
+    box-shadow: 
+      inset 0 0 15px rgba(255, 255, 255, 0.08),
+      0 0 20px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 153, 51, 0.1);
+    filter: brightness(1.15);
+  }
 
-        .shio-image {
-            width: 140px;
-            height: 140px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            border-radius: 10px;
-            border: 2px solid #ffffff;
-            box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
-            background-color: rgba(255, 255, 255, 0.1);
-        }
+  .shio-info h2 {
+    margin: 10px 0 0 0;
+    font-size: 16px;
+    text-shadow: 0 0 8px rgba(255, 153, 51, 0.7);
+    color: var(--text-gold);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+  }
 
-        .shio-info h2 {
-            margin: 10px 0 0 0;
-            font-size: 16px;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            color: #ffffff;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-align: center;
-            font-family: 'Poppins', sans-serif;
-        }
+  .shio-info p {
+    font-size: 12px;
+    margin: 10px 0 0 0;
+    color: var(--text-light);
+    text-align: center;
+    line-height: 1.5;
+    font-weight: 500;
+    padding: 5px 8px;
+    font-family: 'Poppins', sans-serif;
+    background: rgba(255, 102, 0, 0.15);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 153, 51, 0.2);
+  }
 
-        .shio-info p {
-            font-size: 12px;
-            margin: 6px 0 0 0;
-            color: #ffffff;
-            text-align: center;
-            line-height: 1.3;
-            font-weight: 500;
-            padding: 0 5px;
-            font-family: 'Poppins', sans-serif;
-        }
+  .extra-cards {
+    display: flex;
+    gap: 10px;
+  }
 
-        .extra-cards {
-            display: flex;
-            gap: 10px;
-        }
+  /* STYLE UNTUK CARD BBFS DAN BEBAS - STATIS & UKURAN KECIL */
+  .extra-cards .card {
+    text-align: center;
+    padding: 15px; /* Padding diperkecil */
+    min-width: 80px;
+    border: 1px solid rgba(255, 153, 51, 0.4);
+    background: linear-gradient(145deg, 
+      rgba(77, 38, 0, 0.9) 0%, 
+      rgba(102, 51, 0, 0.9) 100%
+    );
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+  }
 
-        .extra-cards .card {
-            text-align: center;
-            padding: 12px 15px;
-            min-width: 80px;
-            border: 2px solid #ffffff;
-        }
+  .extra-cards h3 {
+    margin: 0;
+    font-size: 16px; /* Ukuran diperkecil */
+    text-shadow: 0 0 8px rgba(255, 153, 51, 0.8);
+    color: var(--text-gold);
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 10px; /* Margin diperkecil */
+  }
 
-        .extra-cards h3 {
-            margin: 0;
-            font-size: 16px;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
-            color: #ffffff;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            font-family: 'Poppins', sans-serif;
-        }
+  /* STYLE KHUSUS UNTUK ANGKA BBFS - STATIS & UKURAN KECIL */
+  #bbfsNumbers {
+    font-size: 14px; /* Ukuran diperkecil */
+    font-weight: 700; /* Ketebalan dikurangi */
+    color: var(--text-white);
+    text-shadow: 
+      0 0 6px rgba(255, 153, 51, 0.7),
+      0 0 12px rgba(255, 102, 0, 0.5);
+    letter-spacing: 2px; /* Spasi diperkecil */
+    padding: 8px 12px; /* Padding diperkecil */
+    background: linear-gradient(45deg, 
+      rgba(255, 102, 0, 0.2), 
+      rgba(255, 153, 51, 0.2)
+    );
+    border-radius: 8px;
+    border: 1px solid rgba(255, 153, 51, 0.4);
+    box-shadow: 
+      inset 0 0 8px rgba(255, 255, 255, 0.1),
+      0 0 10px rgba(255, 102, 0, 0.2);
+    margin: 0;
+    min-width: 160px; /* Lebar diperkecil */
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    line-height: 1.2;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    /* HAPUS SEMUA ANIMASI */
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
 
-        .extra-cards p {
-            margin: 6px 0 0 0;
-            font-size: 14px;
-            font-weight: bold;
-            color: #ffffff;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
-            font-family: 'Poppins', sans-serif;
-        }
+  /* STYLE KHUSUS UNTUK ANGKA BEBAS - STATIS & UKURAN KECIL */
+  #bebasNumbers {
+    font-size: 18px; /* Ukuran diperkecil */
+    font-weight: 700; /* Ketebalan dikurangi */
+    color: var(--text-gold);
+    text-shadow: 
+      0 0 8px rgba(255, 153, 51, 0.8),
+      0 0 16px rgba(255, 102, 0, 0.6);
+    letter-spacing: 1px;
+    padding: 10px 15px; /* Padding diperkecil */
+    background: linear-gradient(45deg, 
+      rgba(255, 102, 0, 0.3), 
+      rgba(255, 153, 51, 0.3)
+    );
+    border-radius: 10px;
+    border: 1px solid rgba(255, 204, 0, 0.5);
+    box-shadow: 
+      inset 0 0 10px rgba(255, 255, 255, 0.15),
+      0 0 15px rgba(255, 102, 0, 0.3),
+      0 2px 6px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    min-width: 100px; /* Lebar diperkecil */
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* HAPUS SEMUA ANIMASI */
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
 
-        .footer-card {
-            padding: 15px;
-            text-align: center;
-            font-size: 14px;
-            font-weight: 600;
-            color: #ffffff;
-            line-height: 1.4;
-            border: 2px solid #ffffff;
-            font-family: 'Poppins', sans-serif;
-        }
+  .extra-cards p {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+  }
 
-        /* Responsif untuk tablet */
-        @media (min-width: 768px) {
-            .middle-section {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-            .compass-row {
-                flex-direction: column;
-                align-items: center;
-                width: 48%;
-            }
-            .shio-row {
-                width: 48%;
-                justify-content: center;
-            }
-            .extra-cards {
-                flex-direction: column;
-                width: 100%;
-            }
-        }
+  .footer-card {
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-light);
+    line-height: 1.7;
+    border: 1px solid rgba(255, 153, 51, 0.4);
+    background: linear-gradient(145deg, 
+      rgba(77, 38, 0, 0.9) 0%, 
+      rgba(102, 51, 0, 0.9) 100%
+    );
+    font-family: 'Poppins', sans-serif;
+    border-radius: 12px;
+    box-shadow: 
+      inset 0 0 20px rgba(255, 153, 51, 0.15),
+      0 5px 20px rgba(0, 0, 0, 0.4);
+  }
 
-        /* Responsif untuk desktop */
-        @media (min-width: 1024px) {
-            .main-card {
-                max-width: 800px;
-                padding: 30px;
-            }
-            .compass-card {
-                width: 200px;
-                height: 200px;
-            }
-            .shio-card {
-                width: 200px;
-                height: 260px;
-            }
-            .shio-image {
-                width: 160px;
-                height: 160px;
-            }
-            .random-number {
-                font-size: 22px;
-                width: 40px;
-                height: 40px;
-            }
-            .extra-cards .card {
-                padding: 15px 20px;
-            }
-            .extra-cards h3 {
-                font-size: 18px;
-            }
-            .extra-cards p {
-                font-size: 16px;
-            }
-            .LAPAK99-logo {
-                font-size: 36px;
-            }
-            .pasaran-name {
-                font-size: 24px;
-                min-height: 50px;
-            }
-        }
+  /* Responsif untuk tablet */
+  @media (min-width: 768px) {
+    .main-card {
+      padding: 30px;
+      max-width: 700px;
+    }
+    
+    .middle-section {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    
+    .compass-row {
+      flex-direction: column;
+      align-items: center;
+      width: 48%;
+    }
+    
+    .shio-row {
+      width: 48%;
+      justify-content: center;
+    }
+    
+    .syair-header h2 {
+      font-size: 26px;
+    }
+    
+    .lapak-logo-img {
+      max-width: 280px;
+    }
+    
+    .pasaran-label {
+      font-size: 16px;
+    }
+    
+    .pasaran-name {
+      font-size: 24px;
+      min-height: 55px;
+    }
+    
+    .extra-cards {
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .random-number {
+      font-size: 18px; /* Ukuran tablet */
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+    }
+    
+    #bbfsNumbers {
+      font-size: 16px; /* Ukuran tablet */
+      letter-spacing: 2.5px;
+      padding: 10px 15px;
+    }
+    
+    #bebasNumbers {
+      font-size: 20px; /* Ukuran tablet */
+      padding: 12px 18px;
+    }
+  }
 
-        /* Responsif untuk mobile kecil */
-        @media (max-width: 480px) {
-            body {
-                padding: 10px;
-            }
-            .main-card {
-                padding: 15px;
-                border-radius: 15px;
-            }
-            .compass-card {
-                width: 150px;
-                height: 150px;
-            }
-            .shio-card {
-                width: 150px;
-                height: 200px;
-            }
-            .shio-image {
-                width: 120px;
-                height: 120px;
-            }
-            .random-number {
-                font-size: 16px;
-                width: 28px;
-                height: 28px;
-            }
-            .extra-cards {
-                flex-direction: column;
-                align-items: center;
-            }
-            .extra-cards .card {
-                width: 100%;
-                max-width: 180px;
-            }
-            .LAPAK99-logo {
-                font-size: 28px;
-                padding: 6px 15px;
-            }
-            .pasaran-name {
-                font-size: 18px;
-                padding: 4px 12px;
-                min-height: 35px;
-            }
-            .syair-header h2 {
-                font-size: 20px;
-            }
-            .flower {
-                font-size: 12px;
-            }
-            /* Gambar background lebih transparan di mobile */
-            .main-card::before {
-                opacity: 0.1;
-            }
-        }
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  /* Responsif untuk desktop */
+  @media (min-width: 1024px) {
+    .main-card {
+      max-width: 800px;
+      padding: 35px;
+    }
+    
+    .compass-card {
+      width: 200px;
+      height: 200px;
+    }
+    
+    .shio-card {
+      width: 200px;
+      height: 260px;
+    }
+    
+    .shio-image {
+      width: 160px;
+      height: 160px;
+    }
+    
+    .random-number {
+      font-size: 20px; /* Ukuran desktop */
+      width: 45px;
+      height: 45px;
+      border-radius: 10px;
+      border-width: 1px;
+    }
+    
+    .lapak-logo-img {
+      max-width: 320px;
+    }
+    
+    .extra-cards .card {
+      padding: 18px;
+    }
+    
+    .extra-cards h3 {
+      font-size: 18px;
+    }
+    
+    #bbfsNumbers {
+      font-size: 18px; /* Ukuran desktop */
+      letter-spacing: 3px;
+      padding: 12px 18px;
+      min-width: 200px;
+    }
+    
+    #bebasNumbers {
+      font-size: 22px; /* Ukuran desktop */
+      padding: 14px 22px;
+      min-width: 120px;
+    }
+    
+    .pasaran-label {
+      font-size: 18px;
+    }
+    
+    .pasaran-name {
+      font-size: 26px;
+      min-height: 60px;
+    }
+  }
+
+  /* Responsif untuk mobile kecil */
+  @media (max-width: 480px) {
+    body {
+      padding: 10px;
+    }
+    
+    .main-card {
+      padding: 15px;
+      border-radius: 15px;
+    }
+    
+    .compass-card {
+      width: 150px;
+      height: 150px;
+    }
+    
+    .shio-card {
+      width: 150px;
+      height: 200px;
+    }
+    
+    .shio-image {
+      width: 120px;
+      height: 120px;
+    }
+    
+    .random-number {
+      font-size: 14px; /* Ukuran mobile */
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      border-width: 1px;
+    }
+    
+    .lapak-logo-img {
+      max-width: 200px;
+    }
+    
+    .extra-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .extra-cards .card {
+      width: 100%;
+      max-width: 160px;
+    }
+    
+    #bbfsNumbers {
+      font-size: 12px; /* Ukuran mobile */
+      letter-spacing: 1.5px;
+      padding: 6px 10px;
+      min-width: 130px;
+    }
+    
+    #bebasNumbers {
+      font-size: 16px; /* Ukuran mobile */
+      padding: 8px 12px;
+      min-width: 80px;
+    }
+    
+    .pasaran-label {
+      font-size: 12px;
+    }
+    
+    .pasaran-name {
+      font-size: 18px;
+      padding: 10px 20px;
+      min-height: 45px;
+    }
+    
+    .syair-header h2 {
+      font-size: 20px;
+    }
+  }
+
+  /* HAPUS SEMUA ANIMASI UNTUK ANGKA */
+  /* Animasi untuk glow background main card tetap */
+  @keyframes glowBackground {
+    0% { 
+      box-shadow: 
+        0 0 50px rgba(255, 102, 0, 0.5),
+        inset 0 0 30px rgba(255, 153, 51, 0.2);
+    }
+    50% { 
+      box-shadow: 
+        0 0 70px rgba(255, 153, 51, 0.7),
+        inset 0 0 40px rgba(255, 204, 0, 0.3);
+    }
+    100% { 
+      box-shadow: 
+        0 0 50px rgba(255, 102, 0, 0.5),
+        inset 0 0 30px rgba(255, 153, 51, 0.2);
+    }
+  }
+
+  .main-card {
+    animation: glowBackground 6s ease-in-out infinite;
+  }
+
+  /* Animasi untuk perubahan pasaran tetap */
+  @keyframes highlight {
+    0% { 
+      background: linear-gradient(45deg, 
+        rgba(255, 102, 0, 0.4), 
+        rgba(255, 153, 51, 0.4)
+      );
+    }
+    50% { 
+      background: linear-gradient(45deg, 
+        rgba(255, 153, 51, 0.6), 
+        rgba(255, 204, 0, 0.6)
+      );
+    }
+    100% { 
+      background: linear-gradient(45deg, 
+        rgba(255, 102, 0, 0.4), 
+        rgba(255, 153, 51, 0.4)
+      );
+    }
+  }
+
+  .pasaran-name {
+    animation: highlight 4s ease-in-out infinite;
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="flower-bg" id="flowerContainer"></div>
-    
-    <div class="main-card">
-        <div class="syair-header">
-            <h2>SYAIR TOGEL</h2>
-            <div class="LAPAK99-logo">LAPAK99</div>
-            <div class="pasaran-label">pasaran</div>
-            <div class="pasaran-name" id="pasaranDisplay">MAGNUM4D</div>
-            <div class="date-text" id="currentDate"></div>
+
+<div class="main-card">
+  <!-- SYAIR -->
+  <div class="syair-header">
+    <h2>SYAIR TOGEL</h2>
+    <div class="logo-image-container">
+      <img src="https://i.postimg.cc/9f6fc4Nq/LAPAK9999.png" alt="LAPAK99" class="lapak-logo-img">
+    </div>
+    <div class="pasaran-label">PASARAN</div>
+    <div class="pasaran-name" id="pasaranDisplay">MAGNUM4D</div>
+    <div class="date-text" id="currentDate"></div>
+  </div>
+
+  <!-- Middle section -->
+  <div class="middle-section">
+    <!-- Compass & BBFS/BEBAS -->
+    <div class="compass-row">
+      <div class="compass-card">
+        <img src="https://i.postimg.cc/J02cS7xF/POSTINGAN-KEMENANGAN-35.png" alt="Kemenangan">
+        <div class="random-number top" id="numTop">0</div>
+        <div class="random-number bottom" id="numBottom">0</div>
+        <div class="random-number left" id="numLeft">0</div>
+        <div class="random-number right" id="numRight">0</div>
+      </div>
+
+      <div class="extra-cards">
+        <div class="card">
+          <h3>BBFS</h3>
+          <p id="bbfsNumbers">1234567</p>
         </div>
-
-        <div class="middle-section">
-            <div class="compass-row">
-                <div class="compass-card">
-                    <img src="https://i.postimg.cc/J02cS7xF/POSTINGAN-KEMENANGAN-35.png" alt="Kemenangan">
-                    <div class="random-number top" id="numTop">0</div>
-                    <div class="random-number bottom" id="numBottom">0</div>
-                    <div class="random-number left" id="numLeft">0</div>
-                    <div class="random-number right" id="numRight">0</div>
-                </div>
-
-                <div class="extra-cards">
-                    <div class="card">
-                        <h3>BBFS</h3>
-                        <p id="bbfsNumbers">1234567</p>
-                    </div>
-                    <div class="card">
-                        <h3>BEBAS</h3>
-                        <p id="bebasNumbers">1/1</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="shio-row">
-                <div class="shio-card" id="shioCard">
-                    <div class="shio-image" id="shioImage"></div>
-                    <div class="shio-info">
-                        <h2 id="shioName">SHIO</h2>
-                        <p id="shioDesc"></p>
-                    </div>
-                </div>
-            </div>
+        <div class="card">
+          <h3>BEBAS</h3>
+          <p id="bebasNumbers">1/1</p>
         </div>
-
-        <div class="footer-card" id="footer"></div>
+      </div>
     </div>
 
-    <script>
-        // Fungsi untuk membuat bunga di latar belakang
-        function createFlowers() {
-            const flowerContainer = document.getElementById('flowerContainer');
-            const flowerTypes = ['🌸', '🌺', '🌼', '🌻', '🌷', '💮', '🏵️', '🥀', '🪷'];
-            const flowerColors = ['flower-red', 'flower-orange', 'flower-yellow', 'flower-purple', 'flower-pink'];
-            
-            for (let i = 0; i < 15; i++) {
-                const flower = document.createElement('div');
-                flower.className = `flower ${flowerColors[Math.floor(Math.random() * flowerColors.length)]}`;
-                flower.innerHTML = flowerTypes[Math.floor(Math.random() * flowerTypes.length)];
-                flower.style.left = `${Math.random() * 100}%`;
-                flower.style.fontSize = `${Math.random() * 20 + 15}px`;
-                const duration = Math.random() * 20 + 10;
-                flower.style.animation = `float ${duration}s infinite linear`;
-                flower.style.animationDelay = `${Math.random() * 5}s`;
-                flowerContainer.appendChild(flower);
-            }
-        }
+    <!-- Shio card -->
+    <div class="shio-row">
+      <div class="shio-card" id="shioCard">
+        <div class="shio-image" id="shioImage"></div>
+        <div class="shio-info">
+          <h2 id="shioName">SHIO</h2>
+          <p id="shioDesc"></p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        // Data pasaran
-        const pasaranList = [
-            "TOTO MACAU", "HOKI DRAW", "SYDNEY LOTTO", "BRUNEI", "CHELSEA",
-            "TOTO MALI", "POIPET", "HUAHIN", "KING KONG4D", "PCSO",
-            "NEVADA", "HONGKONG", "KENTUCKY", "BANGKOK", "FLORIDA",
-            "NEW YORK", "OREGON", "CALIFORNIA", "TOTO CAMBODIA LIVE",
-            "CAROLINA", "BULLSEYE", "SINGAPORE", "MAGNUM4D"
-        ];
+  <!-- Footer -->
+  <div class="footer-card" id="footer"></div>
+</div>
 
-        function getRandomPasaran() {
-            return pasaranList[Math.floor(Math.random() * pasaranList.length)];
-        }
+<script>
+  // Data pasaran
+  const pasaranList = [
+    "TOTO MACAU", "HOKI DRAW", "SYDNEY LOTTO", "BRUNEI", "CHELSEA",
+    "TOTO MALI", "POIPET", "HUAHIN", "KING KONG4D", "PCSO", "NEVADA",
+    "HONGKONG", "KENTUCKY", "BANGKOK", "FLORIDA", "NEW YORK", "OREGON",
+    "CALIFORNIA", "TOTO CAMBODIA LIVE", "CAROLINA", "BULLSEYE", "SINGAPORE", "MAGNUM4D"
+  ];
 
-        function updatePasaran() {
-            const pasaranDisplay = document.getElementById('pasaranDisplay');
-            pasaranDisplay.textContent = getRandomPasaran();
-            pasaranDisplay.style.transform = 'scale(0.95)';
-            setTimeout(() => { pasaranDisplay.style.transform = 'scale(1)'; }, 150);
-        }
+  // Fungsi untuk mendapatkan pasaran acak
+  function getRandomPasaran() {
+    const randomIndex = Math.floor(Math.random() * pasaranList.length);
+    return pasaranList[randomIndex];
+  }
 
-        function updateDate() {
-            const today = new Date();
-            const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
-            document.getElementById('currentDate').innerText = today.toLocaleDateString('id-ID', options);
-        }
+  // Fungsi untuk update nama pasaran
+  function updatePasaran() {
+    const pasaranDisplay = document.getElementById('pasaranDisplay');
+    const randomPasaran = getRandomPasaran();
+    pasaranDisplay.textContent = randomPasaran;
+    
+    // Tambahkan efek visual saat berubah
+    pasaranDisplay.style.animation = 'none';
+    void pasaranDisplay.offsetWidth; // Trigger reflow
+    pasaranDisplay.style.animation = 'highlight 4s ease-in-out';
+  }
 
-        // Footer syair
-        const footerTexts = [
-            `Rajin-rajinlah beribadah<br>Jangan lupa salat<br>Dan perbanyak zakat<br>Untuk bekal akhirat`,
-            'Dalam malam yang kelam, langit berurai<br>Rindu membeku dalam angin yang merintih<br>Hati terbelah, diwarnai senyap pilu<br>Kesedihan menari di antara bayang-bayang<br>',
-            'Di ujung hari yang hampa, bintang meredup<br>Menyisakan jejak air mata di cakrawala<br>Cinta yang hilang, seperti debu tertiup<br>Menghilang dalam ruang yang tak bertepi<br>',
-            'Setiap suara angin, menyimpan cerita<br>Tentang harapan yang melayang jauh<br>Di balik awan, gemericik duka<br>Mengiringi langkah yang penuh ragu<br>',
-            'Di tengah tawa, air mata menari lembut<br>Senyum yang tulus, membasahi pipi yang cerah<br>Kebahagiaan mengalir dalam setiap tetes<br>Menjadi pelangi setelah hujan yang reda<br>',
-            'Ketika harapan menjadi nyata, dan mimpi terwujud<br>Rasa syukur menjadikan air mata sebagai saksi<br>Bahagia mengalir, seiring waktu yang berharga<br>Menyatukan jiwa dalam pelukan cinta yang abadi<br>',
-            'Seorang gadis cantik jelita<br>Telah melintas di depan mata<br>Membuat diri ini terpana<br>Dan juga mendambakan sosoknya<br>',
-            'Wajahnya selalu ada dibenak<br>Membuat tidurku jadi tak nyenyak<br>Apakah ini adalah cinta<br>Atau sekadar terkagum saja<br>',
-            'Cinta yang ada di ini dada<br>Kian merekah bagai sang bunga<br>Yang telah merekahkan kelopaknya<br>Yang punya warna indah di mata<br>',
-            'Kalau mencinta jangan memaksa<br>Supaya tidak saling menyiksa<br>Mencintalah dengan seikhlas rasa<br>Supaya tidak saling menyiksa<br>',
-            `Di ujung hari, bintang meredup<br>Cinta yang hilang menghilang dalam ruang tak bertepi`
-        ];
+  // Tanggal otomatis
+  function updateDate() {
+    const today = new Date();
+    const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+    document.getElementById('currentDate').innerText = today.toLocaleDateString('id-ID', options);
+  }
 
-        function randomFooter() {
-            const text = footerTexts[Math.floor(Math.random() * footerTexts.length)];
-            document.getElementById("footer").innerHTML = text;
-        }
+  // Footer syair
+  const footerTexts = [
+    `Rajin-rajinlah beribadah<br>Jangan lupa salat<br>Dan perbanyak zakat<br>Untuk bekal akhirat`,
+    `Dalam malam yang kelam, rindu membeku<br>Kesedihan menari di antara bayang-bayang<br>`,
+    'Dalam malam yang kelam, langit berurai<br>Rindu membeku dalam angin yang merintih<br>Hati terbelah, diwarnai senyap pilu<br>Kesedihan menari di antara bayang-bayang<br>',
+    'Di ujung hari yang hampa, bintang meredup<br>Menyisakan jejak air mata di cakrawala<br>Cinta yang hilang, seperti debu tertiup<br>Menghilang dalam ruang yang tak bertepi<br>',
+    'Setiap suara angin, menyimpan cerita<br>Tentang harapan yang melayang jauh<br>Di balik awan, gemericik duka<br>Mengiringi langkah yang penuh ragu<br>',
+    'Di tengah tawa, air mata menari lembut<br>Senyum yang tulus, membasahi pipi yang cerah<br>Kebahagiaan mengalir dalam setiap tetes<br>Menjadi pelangi setelah hujan yang reda<br>',
+    'Ketika harapan menjadi nyata, dan mimpi terwujud<br>Rasa syukur menjadikan air mata sebagai saksi<br>Bahagia mengalir, seiring waktu yang berharga<br>Menyatukan jiwa dalam pelukan cinta yang abadi<br>',
+    'Di ujung langit, matahari terbenam lembut<br>Menyeruput warna, melukis cakrawala malam<br>Angin berbisik lembut di antara pepohonan<br>Menyapu jiwa, menenangkan dengan kasih sayang<br>',
+    'Bunga-bunga menari dalam embun pagi<br>Keharuman mereka menggema di udara<br>Setiap kelopak, seolah membawa pesan cinta<br>Mengisi hari dengan keajaiban yang nyata<br>',
+    'Gunung menjulang megah, penuh misteri<br>Berkilau di bawah cahaya bulan yang lembut<br>Sungai mengalir tenang, penuh cerita<br>Menyanyikan lagu yang tak pernah pudar<br>',
+    'Dalam setiap detik, dalam setiap helaan napas<br>Tersimpan keindahan dunia yang abadi<br>Hati yang luluh dalam kerinduan ini<br>Merasakan cinta semesta yang tak pernah mati<br>',
+    'Seorang gadis cantik jelita<br>Telah melintas di depan mata<br>Membuat diri ini terpana<br>Dan juga mendambakan sosoknya<br>',
+    'Wajahnya selalu ada dibenak<br>Membuat tidurku jadi tak nyenyak<br>Apakah ini adalah cinta<br>Atau sekadar terkagum saja<br>',
+    'Namun dalam setiap detik, setiap helaan napas<br>Ada kerinduan yang membekas di hati<br>Seakan jauh di sana, ada tempat yang hilang<br>Tempat di mana cinta dan mimpi bertemu<br>',
+    'Rindu ini mengalir seperti aliran sungai<br>Tak henti mencari, tak pernah puas<br>Dalam keindahan dunia yang abadi<br>Kuharapkan ada satu tempat untuk kita berdua<br>',
+    'Cinta yang ada di ini dada<br>Kian merekah bagai sang bunga<br>Yang telah merekahkan kelopaknya<br>Yang punya warna indah di mata<br>',
+    'Kalau mencinta jangan memaksa<br>Supaya tidak saling menyiksa<br>Mencintalah dengan seikhlas rasa<br>Supaya tidak saling menyiksa<br>',
+    'Jangan engkau buta dalam mencinta<br>Agar kau tidak membabi buta<br>Dalam mencintai sosoknya<br>Dalam mencemburi sosoknya<br>',
+    'Jikalau dia memang jodohnya<br>Pastilah nanti akan berjumpa<br>Jikalau memang bukan jodohnya<br>Marilah coba ikhlaskan saja<br>',
+    'Wahai kau kekasih yang tercinta<br>Dimanakah engkau kini berada<br>Daku sangat ingin kita berjumpa<br>Dan bercanda tawa bersama-sama<br>',
+    'Akan kupanjatkan sebuah doa<br>Untuk dirinya yang kucinta<br>Semoga dia selalu bahagia<br>Dan berada dalam lindungan-Nya<br>',
+    'Aku diam bukan karena tak cinta<br>Aku hanya sedang memendam rasa<br>Yang belum saatnya diungkapkan<br>Yang belum saatnya dicurahkan<br>',
+    'Jangan mencintai karena materi<br>Nanti kita akan jadi merugi<br>Jangan pula cinta karena rupa<br>Nanti cinta kita akan mudah sirna<br>',
+    'Jika dia memang bukan jodohnya<br>Mari diikhlaskan saja dirinya<br>Moga nanti akan kita mendapat<br>Pengganti yang jauh lebih tepat<br>',
+    `Di ujung hari, bintang meredup<br>Cinta yang hilang menghilang dalam ruang tak bertepi`
+  ];
 
-        // Shio
-        const shioData = [
-            { name: 'SHIO ULAR', url: 'https://i.postimg.cc/MHf4mQ6T/ular-Photoroom.png', desc: ["SUKA NGINTIP DARI BALIK BATU KAYAK DETEKTIF LICIN","BERGERAK TANPA KAKI","GESIT BANGET","REPTIL BERDARAH DINGIN"] },
-            { name: 'SHIO NAGA', url: 'https://i.postimg.cc/cJqYhX3M/naga-Photoroom.png', desc: ["BERSIN API PAS FLU","PUNYA SISIK, SAYAP, TARING, DAN NAFAS API","SIMBOL KEKUATAN DAN KEBERUNTUNGAN","GAGAH DAN PEMBERANI"] },
-            { name: 'SHIO KELINCI', url: 'https://i.postimg.cc/L89crhvr/069c4397a9288af04691aa1e6ca0c39a-Photoroom.png', desc: ["KUPING PANJANG DAN SUKA LOMPAT-LOMPAT","GIGI DEPANNYA TERUS TUMBUH","BERKEMBANG BIAK CEPAT","KUPING PANJANG"] },
-            { name: 'SHIO HARIMAU', url: 'https://i.postimg.cc/bw0BNPVb/image-Photoroom.png', desc: ["MIRIP KUCING RUMAHAN","PUNYA BELANG UNIK DI TUBUH","KARNIVORA PUNCAK RANTAI MAKANAN","PEMAKAN DAGING"] },
-            { name: 'SHIO KERBAU', url: 'https://i.postimg.cc/SxPTQGcw/17deabf0d02c1a1ef05e0d92fc47b53b-Photoroom.png', desc: ["SUKA MANDI LUMPUR","BERTANDUK BESAR MELENGKUNG","LAMBAN TAPI KUAT","BANTU PEKERJA DI SAWAH"] },
-            { name: 'SHIO TIKUS', url: 'https://i.postimg.cc/VLLDjhRh/572ef90cf873cf0bae134fb10b9e9ce6-Photoroom.png', desc: ["SUKA SEMBUNYI","KATANYA SIH SUKA KEJU!?","SUKA MUNCUL DI FILM KARTUN","PENGERAT"] },
-            { name: 'SHIO BABI', url: 'https://i.postimg.cc/0Q0bncnq/988651d0fb546b5ed57fa5813fce79de-Photoroom.png', desc: ["MAKAN TIDUR","PUNYA PENCIUMAN TAJAM","SUARANYA 'NGOK NGOK'","SUKA DIPANGGIL 'ICA'"] },
-            { name: 'SHIO ANJING', url: 'https://i.postimg.cc/DZ6wLmfK/26edd62a40024a37605788aa04330308-Photoroom.png', desc: ["PENURUT","PENCIUMANNYA TAJAM","BISA SENYUM SAMPAI NGAMBEK","TEMAN BAIK MANUSIA"] },
-            { name: 'SHIO AYAM', url: 'https://i.postimg.cc/BvcSftKP/ebe301829765054ef33f8416cf6e1685-Photoroom.png', desc: ["SIJANTAN BERKOKOK","BETINANYA BERTELUR","BERKOKOK","PUNYA SAYAP TAPI GAK BISA TERBANG"] },
-            { name: 'SHIO MONYET', url: 'https://i.postimg.cc/vmHYMbLK/c2364d161855434c28e5015e412ac631-Photoroom.png', desc: ["SUKA USIL","BISA MENIRU PERILAKU MANUSIA","PRIMATA SOSIAL YANG PINTAR","HABITATNYA BERKELOMPOK"] },
-            { name: 'SHIO KAMBING', url: 'https://i.postimg.cc/tJhQWMNW/25cba09984349edc203468f9d062bb77-Photoroom.png', desc: ["SUKA NYNERUDUK","SUKA RUMPUT TETANGGA","PUPIL MATANYA HORIZONTAL","KAKINYA EMPAT"] },
-            { name: 'SHIO KUDA', url: 'https://i.postimg.cc/MKDgwRs5/49858cc15abf0f6cb87d5acf1df06753-Photoroom.png', desc: ["BISA TIDUR SAMBIL BERDIRI","KAKINYA KUAT DAN LINCAH","PUNYA PONI ALAMI KAYAK MODEL","LARINYA CEPAT"] }
-        ];
+  function randomFooter() {
+    const text = footerTexts[Math.floor(Math.random() * footerTexts.length)];
+    document.getElementById("footer").innerHTML = text;
+  }
 
-        function randomShio() {
-            const shio = shioData[Math.floor(Math.random() * shioData.length)];
-            document.getElementById("shioName").innerText = shio.name;
-            const randomDesc = shio.desc[Math.floor(Math.random() * shio.desc.length)];
-            document.getElementById("shioDesc").innerHTML = randomDesc;
-            document.getElementById("shioImage").style.backgroundImage = `url(${shio.url})`;
-        }
+  // Shio
+  const shioData = [
+    { name: 'SHIO ULAR', url: 'https://i.postimg.cc/MHf4mQ6T/ular-Photoroom.png', desc: ["SUKA NGINTIP DARI BALIK BATU KAYAK DETEKTIF LICIN","BERGERAK TANPA KAKI","GESIT BANGET","REPTIL BERDARAH DINGIN"] },
+    { name: 'SHIO NAGA', url: 'https://i.postimg.cc/cJqYhX3M/naga-Photoroom.png', desc: ["BERSIN API PAS FLU","PUNYA SISIK, SAYAP, TARING, DAN NAFAS API","SIMBOL KEKUATAN DAN KEBERUNTUNGAN","GAGAH DAN PEMBERANI"] },
+    { name: 'SHIO KELINCI', url: 'https://i.postimg.cc/L89crhvr/069c4397a9288af04691aa1e6ca0c39a-Photoroom.png', desc: ["KUPING PANJANG DAN SUKA LOMPAT-LOMPAT","GIGI DEPANNYA TERUS TUMBUH","BERKEMBANG BIAK CEPAT","KUPING PANJANG"] },
+    { name: 'SHIO HARIMAU', url: 'https://i.postimg.cc/bw0BNPVb/image-Photoroom.png', desc: ["MIRIP KUCING RUMAHAN","PUNYA BELANG UNIK DI TUBUH","KARNIVORA PUNCAK RANTAI MAKANAN","PEMAKAN DAGING"] },
+    { name: 'SHIO KERBAU', url: 'https://i.postimg.cc/SxPTQGcw/17deabf0d02c1a1ef05e0d92fc47b53b-Photoroom.png', desc: ["SUKA MANDI LUMPUR","BERTANDUK BESAR MELENGKUNG","LAMBAN TAPI KUAT","BANTU PEKERJA DI SAWAH"] },
+    { name: 'SHIO TIKUS', url: 'https://i.postimg.cc/VLLDjhRh/572ef90cf873cf0bae134fb10b9e9ce6-Photoroom.png', desc: ["SUKA SEMBUNYI","KATANYA SIH SUKA KEJU!?","SUKA MUNCUL DI FILM KARTUN","PENGERAT"] },
+    { name: 'SHIO BABI', url: 'https://i.postimg.cc/0Q0bncnq/988651d0fb546b5ed57fa5813fce79de-Photoroom.png', desc: ["MAKAN TIDUR","PUNYA PENCIUMAN TAJAM","SUARANYA 'NGOK NGOK'","SUKA DIPANGGIL 'ICA'"] },
+    { name: 'SHIO ANJING', url: 'https://i.postimg.cc/DZ6wLmfK/26edd62a40024a37605788aa04330308-Photoroom.png', desc: ["PENURUT","PENCIUMANNYA TAJAM","BISA SENYUM SAMPAI NGAMBEK","TEMAN BAIK MANUSIA"] },
+    { name: 'SHIO AYAM', url: 'https://i.postimg.cc/BvcSftKP/ebe301829765054ef33f8416cf6e1685-Photoroom.png', desc: ["SIJANTAN BERKOKOK","BETINANYA BERTELUR","BERKOKOK","PUNYA SAYAP TAPI GAK BISA TERBANG"] },
+    { name: 'SHIO MONYET', url: 'https://i.postimg.cc/vmHYMbLK/c2364d161855434c28e5015e412ac631-Photoroom.png', desc: ["SUKA USIL","BISA MENIRU PERILAKU MANUSIA","PRIMATA SOSIAL YANG PINTAR","HABITATNYA BERKELOMPOK"] },
+    { name: 'SHIO KAMBING', url: 'https://i.postimg.cc/tJhQWMNW/25cba09984349edc203468f9d062bb77-Photoroom.png', desc: ["SUKA NYNERUDUK","SUKA RUMPUT TETANGGA","PUPIL MATANYA HORIZONTAL","KAKINYA EMPAT"] },
+    { name: 'SHIO KUDA', url: 'https://i.postimg.cc/MKDgwRs5/49858cc15abf0f6cb87d5acf1df06753-Photoroom.png', desc: ["BISA TIDUR SAMBIL BERDIRI","KAKINYA KUAT DAN LINCAH","PUNYA PONI ALAMI KAYAK MODEL","LARINYA CEPAT"] }
+  ];
 
-        function randomNumbers() {
-            document.getElementById("numTop").innerText = Math.floor(Math.random()*10);
-            document.getElementById("numBottom").innerText = Math.floor(Math.random()*10);
-            document.getElementById("numLeft").innerText = Math.floor(Math.random()*10);
-            document.getElementById("numRight").innerText = Math.floor(Math.random()*10);
-        }
+  function randomShio() {
+    const shio = shioData[Math.floor(Math.random() * shioData.length)];
+    document.getElementById("shioName").innerText = shio.name;
+    const randomDesc = shio.desc[Math.floor(Math.random() * shio.desc.length)];
+    document.getElementById("shioDesc").innerHTML = randomDesc;
+    document.getElementById("shioImage").style.backgroundImage = `url(${shio.url})`;
+  }
 
-        function updateBBFS() {
-            let numbers = '';
-            for (let i = 0; i < 7; i++) { numbers += Math.floor(Math.random()*10); }
-            document.getElementById('bbfsNumbers').innerText = numbers;
-        }
+  // Compass angka - tanpa animasi
+  function randomNumbers() {
+    document.getElementById("numTop").innerText = Math.floor(Math.random()*10);
+    document.getElementById("numBottom").innerText = Math.floor(Math.random()*10);
+    document.getElementById("numLeft").innerText = Math.floor(Math.random()*10);
+    document.getElementById("numRight").innerText = Math.floor(Math.random()*10);
+  }
 
-        function updateBEBAS() {
-            const num1 = Math.floor(Math.random()*10);
-            const num2 = Math.floor(Math.random()*10);
-            document.getElementById('bebasNumbers').innerText = `${num1}/${num2}`;
-        }
+  // BBFS & BEBAS - tanpa animasi
+  function updateBBFS() {
+    let numbers = '';
+    for (let i = 0; i < 7; i++) {
+      numbers += Math.floor(Math.random()*10);
+    }
+    document.getElementById('bbfsNumbers').innerText = numbers;
+  }
 
-        // Initialize page
-        function initializePage() {
-            createFlowers();
-            updateDate();
-            updatePasaran();
-            randomShio();
-            randomFooter();
-            randomNumbers();
-            updateBBFS();
-            updateBEBAS();
-        }
+  function updateBEBAS() {
+    const num1 = Math.floor(Math.random()*10);
+    const num2 = Math.floor(Math.random()*10);
+    document.getElementById('bebasNumbers').innerText = `${num1}/${num2}`;
+  }
 
-        document.addEventListener('DOMContentLoaded', initializePage);
-        setInterval(randomNumbers, 1000);
-    </script>
+  // Init semua fungsi
+  function initializePage() {
+    updateDate();
+    updatePasaran();
+    randomShio();
+    randomFooter();
+    randomNumbers();
+    updateBBFS();
+    updateBEBAS();
+  }
+
+  // Panggil fungsi inisialisasi saat halaman dimuat
+  document.addEventListener('DOMContentLoaded', initializePage);
+
+  // Update angka kompas setiap detik (tapi tanpa animasi)
+  setInterval(randomNumbers, 1000);
+  
+  // Update BBFS dan BEBAS setiap 3 detik (tapi tanpa animasi)
+  setInterval(() => {
+    updateBBFS();
+    updateBEBAS();
+  }, 3000);
+</script>
 </body>
 </html>
