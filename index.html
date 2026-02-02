@@ -42,7 +42,7 @@
     --light-orange: #E68033;
     --accent-gold: #E6B800;
     --card-bg: rgba(20, 15, 5, 0.95);
-    --text-white: #ffffff;
+    --text-white: #ffffff; /* Putih bersih untuk SYAIR TOGEL */
     --text-light: #E8E0D1;
     --text-gold: #E6C700;
     --border-glow: rgba(230, 92, 0, 0.4);
@@ -177,6 +177,7 @@
     z-index: -1;
   }
 
+  /* PERUBAHAN UTAMA: Teks SYAIR TOGEL menjadi putih */
   .syair-header h2 {
     margin: 0;
     font-size: 22px;
@@ -184,9 +185,10 @@
       0 0 10px rgba(255, 255, 255, 0.3),
       0 0 15px rgba(255, 255, 255, 0.2),
       1px 1px 3px rgba(0, 0, 0, 0.5);
-    color: #ffffff;
+    color: #ffffff; /* Warna putih bersih */
     letter-spacing: 1.5px;
     font-weight: 800;
+    /* HAPUS gradient text */
     background: none;
     -webkit-background-clip: unset;
     -webkit-text-fill-color: unset;
@@ -240,13 +242,14 @@
     opacity: 0.9;
   }
 
+  /* CARD PASARAN - PADDING NORMAL, LOGO SANGAT DEKAT */
   .pasaran-card {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 5px; /* SANGAT KECIL agar logo sangat dekat */
     margin: 10px 0 15px 0;
-    padding: 15px;
+    padding: 15px; /* PADDING NORMAL */
     background: linear-gradient(45deg, 
       rgba(179, 71, 0, 0.35), 
       rgba(204, 102, 0, 0.35),
@@ -304,7 +307,7 @@
       0 0 16px rgba(179, 71, 0, 0.5),
       0 0 25px rgba(204, 102, 0, 0.3);
     letter-spacing: 1.5px;
-    padding: 0 20px;
+    padding: 0 10px; /* Dikurangi agar dekat ke logo */
     font-family: 'Poppins', sans-serif;
     transition: all 0.3s ease;
     text-align: center;
@@ -647,6 +650,7 @@
       justify-content: center;
     }
     
+    /* Ukuran font SYAIR TOGEL responsif */
     .syair-header h2 {
       font-size: 26px;
     }
@@ -662,6 +666,7 @@
     .pasaran-name {
       font-size: 24px;
       min-height: 55px;
+      padding: 0 15px;
     }
     
     .pasaran-logo {
@@ -670,7 +675,8 @@
     }
     
     .pasaran-card {
-      padding: 20px;
+      padding: 15px;
+      gap: 8px;
     }
     
     .extra-cards {
@@ -759,6 +765,7 @@
     .pasaran-name {
       font-size: 26px;
       min-height: 60px;
+      padding: 0 20px;
     }
     
     .pasaran-logo {
@@ -766,6 +773,12 @@
       height: 70px;
     }
     
+    .pasaran-card {
+      padding: 15px;
+      gap: 10px;
+    }
+    
+    /* Ukuran font SYAIR TOGEL desktop */
     .syair-header h2 {
       font-size: 28px;
     }
@@ -838,7 +851,7 @@
     
     .pasaran-name {
       font-size: 18px;
-      padding: 0 15px;
+      padding: 0 8px;
       min-height: 45px;
     }
     
@@ -849,14 +862,16 @@
     
     .pasaran-card {
       padding: 12px;
-      gap: 10px;
+      gap: 5px;
     }
     
+    /* Ukuran font SYAIR TOGEL mobile */
     .syair-header h2 {
       font-size: 20px;
     }
   }
 
+  /* Animasi glow background yang lebih redup */
   @keyframes glowBackground {
     0% { 
       box-shadow: 
@@ -879,6 +894,7 @@
     animation: glowBackground 8s ease-in-out infinite;
   }
 
+  /* Animasi untuk perubahan pasaran yang lebih redup */
   @keyframes highlight {
     0% { 
       background: linear-gradient(45deg, 
@@ -913,7 +929,7 @@
     </div>
     <div class="pasaran-label">PASARAN</div>
     
-    <!-- CARD PASARAN DENGAN LOGO DI SEBELAH KANAN SAJA -->
+    <!-- CARD PASARAN - PADDING NORMAL, LOGO SANGAT DEKAT -->
     <div class="pasaran-card">
       <div class="pasaran-name" id="pasaranDisplay">MAGNUM4D</div>
       <div class="pasaran-logo-container">
@@ -965,30 +981,29 @@
 </div>
 
 <script>
-  // Data pasaran dengan logo
+  // Data pasaran dengan logo - DIUPDATE SESUAI PERMINTAAN
   const pasaranList = [
     { name: "TOTO MACAU", logo: "https://i.postimg.cc/C5bdxb9B/TOTO-MACAU.png" },
-    { name: "HOKI DRAW", logo: "https://i.postimg.cc/8PhgvmdY/image.png" },
+    { name: "HOKI DRAW", logo: "https://i.postimg.cc/zDMNnMYv/CAMBODIA.png" },
     { name: "SYDNEY LOTTO", logo: "https://i.postimg.cc/jdkNTRfQ/SYDNEY.png" },
     { name: "BRUNEI", logo: "https://i.postimg.cc/mDmHX4y4/image.png" },
-    { name: "CHELSEA", logo: "https://i.postimg.cc/fW3CC1jP/CHELSEA.png" },
+    { name: "CHELSEA", logo: "https://i.postimg.cc/nL6GJBsx/CHELSEAA.png" },
     { name: "TOTO MALI", logo: "https://i.postimg.cc/8cLszLxV/TOTO-MALI.png" },
-    { name: "POIPET", logo: "https://i.postimg.cc/Zn3DMQ3B/POIPET.png" },
+    { name: "POIPET", logo: "https://i.postimg.cc/qBDrsx5D/POIPET.png" },
     { name: "HUAHIN", logo: "https://i.postimg.cc/qMdzZZC3/HUAHIN.png" },
-    { name: "KING KONG4D", logo: "https://i.postimg.cc/26bVgsw0/KINGKONG.png" },
-    { name: "PCSO", logo: "https://i.postimg.cc/RVyjGcH4/PCSO.png" },
-    { name: "NEVADA", logo: "https://i.postimg.cc/Y2gSvWXb/CALIFORNIA.png" },
-    { name: "HONGKONG", logo: "https://i.postimg.cc/jSJmSgF9/Hongkong.jpg" },
-    { name: "KENTUCKY", logo: "https://i.postimg.cc/KcdNHQ0v/KENTUCKY.png" },
-    { name: "BANGKOK", logo: "https://i.postimg.cc/G2WHRXgw/BANGKOK.png" },
-    { name: "FLORIDA", logo: "https://i.postimg.cc/wxSVGF0S/Florida.png" },
-    { name: "NEW YORK", logo: "https://i.postimg.cc/y6Jjj2XM/NEW-YORK.png" },
-    { name: "OREGON", logo: "https://i.postimg.cc/cJ9jgw0x/OREGON.png" },
-    { name: "CALIFORNIA", logo: "https://i.postimg.cc/Y2gSvWXb/CALIFORNIA.png" },
+    { name: "KING KONG4D", logo: "https://i.postimg.cc/Y2NvxZH3/KINGKONG4D.png" },
+    { name: "PCSO", logo: "https://i.postimg.cc/Twf62k4d/PCSO-LAPAK99.png" },
+    { name: "NEVADA", logo: "https://i.postimg.cc/qvDwvgD4/NEVADA-LAPAK99.png" },
+    { name: "HONGKONG ", logo: "https://i.postimg.cc/Yq5qKxM0/HONGKONGLOTTO.png" },
+    { name: "KENTUCKY", logo: "https://i.postimg.cc/x1Q8NP7X/KENTUCKY-LAPAK99.png" },
+    { name: "BANGKOK", logo: "https://i.postimg.cc/9fMWygB7/BANGKOK-LAPAK99.png" },
+    { name: "FLORIDA", logo: "https://i.postimg.cc/fb0P4xzq/FLORIDA-LAPAK99.png" },
+    { name: "OREGON", logo: "https://i.postimg.cc/VNBjb6DJ/OREGON-LAPAK99.png" },
+    { name: "CALIFORNIA", logo: "https://i.postimg.cc/bNDVSxb2/CALI-LAPAK99.png" },
     { name: "TOTO CAMBODIA LIVE", logo: "https://i.postimg.cc/zDMNnMYv/CAMBODIA.png" },
-    { name: "CAROLINA", logo: "https://i.postimg.cc/FFfppwgb/CAROLINa.png" },
+    { name: "CAROLINA", logo: "https://i.postimg.cc/bNNNqMfY/image.png" },
     { name: "BULLSEYE", logo: "https://i.postimg.cc/44cYPTyD/bullseye.webp" },
-    { name: "SINGAPORE", logo: "https://i.postimg.cc/d3HpLzFn/singapore.jpg" },
+    { name: "SINGAPORE", logo: "https://i.postimg.cc/Y2mQ1bXz/SGP.png" },
     { name: "MAGNUM4D", logo: "https://i.postimg.cc/LXp3Mq2y/MAGNUMM.png" }
   ];
 
@@ -1020,7 +1035,7 @@
     
     // Tambahkan efek visual saat berubah
     pasaranDisplay.style.animation = 'none';
-    void pasaranDisplay.offsetWidth;
+    void pasaranDisplay.offsetWidth; // Trigger reflow
     
     // Efek visual
     pasaranDisplay.style.opacity = '0.8';
