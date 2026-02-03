@@ -1136,7 +1136,7 @@
   // Init semua fungsi
   function initializePage() {
     updateDate();
-    updatePasaran();
+    updatePasaran(); // Hanya dipanggil saat halaman dimuat
     randomShio();
     randomFooter();
     randomNumbers();
@@ -1147,8 +1147,8 @@
   // Panggil fungsi inisialisasi saat halaman dimuat
   document.addEventListener('DOMContentLoaded', initializePage);
 
-  // Update pasaran dan logo setiap 5 detik
-  setInterval(updatePasaran, 5000);
+  // HAPUS interval untuk update pasaran otomatis
+  // setInterval(updatePasaran, 5000); // DIKOMENTARI
   
   // Update angka kompas setiap detik (tapi tanpa animasi)
   setInterval(randomNumbers, 1000);
