@@ -18,7 +18,6 @@
     overflow: hidden;
   }
 
-  /* Background dengan efek gradient dan pattern yang lebih gelap */
   body::before {
     content: '';
     position: fixed;
@@ -42,7 +41,7 @@
     --light-orange: #E68033;
     --accent-gold: #E6B800;
     --card-bg: rgba(20, 15, 5, 0.95);
-    --text-white: #ffffff; /* Putih bersih untuk SYAIR TOGEL */
+    --text-white: #ffffff;
     --text-light: #E8E0D1;
     --text-gold: #E6C700;
     --border-glow: rgba(230, 92, 0, 0.4);
@@ -69,12 +68,12 @@
       inset 0 0 25px rgba(204, 102, 0, 0.15),
       0 8px 35px rgba(0, 0, 0, 0.9),
       0 0 0 1px rgba(230, 92, 0, 0.2);
-    padding: 25px;
+    padding: 18px;
     width: 100%;
     max-width: 800px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
     color: var(--text-white);
     box-sizing: border-box;
     position: relative;
@@ -149,7 +148,7 @@
   }
 
   .syair-header {
-    padding: 20px;
+    padding: 16px;
     text-align: center;
     border: 1px solid rgba(230, 92, 0, 0.4);
     background: linear-gradient(145deg, 
@@ -177,7 +176,6 @@
     z-index: -1;
   }
 
-  /* PERUBAHAN UTAMA: Teks SYAIR TOGEL menjadi putih */
   .syair-header h2 {
     margin: 0;
     font-size: 22px;
@@ -185,10 +183,9 @@
       0 0 10px rgba(255, 255, 255, 0.3),
       0 0 15px rgba(255, 255, 255, 0.2),
       1px 1px 3px rgba(0, 0, 0, 0.5);
-    color: #ffffff; /* Warna putih bersih */
+    color: #ffffff;
     letter-spacing: 1.5px;
     font-weight: 800;
-    /* HAPUS gradient text */
     background: none;
     -webkit-background-clip: unset;
     -webkit-text-fill-color: unset;
@@ -226,9 +223,9 @@
   .pasaran-label {
     font-size: 14px;
     font-weight: 600;
-    color: var(--text-light);
+    color: var(--text-gold);
     text-shadow: 0 0 6px rgba(204, 102, 0, 0.4);
-    margin: 8px 0 0 0;
+    margin: 6px 0 3px 0;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-family: 'Poppins', sans-serif;
@@ -236,78 +233,90 @@
       rgba(230, 184, 0, 0.25), 
       rgba(230, 115, 0, 0.25)
     );
-    padding: 5px 15px;
+    padding: 4px 12px;
     border-radius: 20px;
     display: inline-block;
     opacity: 0.9;
+    border: 1px solid rgba(230, 184, 0, 0.25);
+    box-shadow: 0 0 8px rgba(179, 71, 0, 0.15);
   }
 
-  /* CARD PASARAN - PADDING NORMAL, LOGO SANGAT DEKAT */
+  /* PASARAN CARD - LOGO KIRI KANAN SEDIKIT LEBIH KECIL */
   .pasaran-card {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px; /* SANGAT KECIL agar logo sangat dekat */
-    margin: 10px 0 15px 0;
-    padding: 15px; /* PADDING NORMAL */
+    margin: 4px 0 8px 0;
+    padding: 8px 15px;
     background: linear-gradient(45deg, 
-      rgba(179, 71, 0, 0.35), 
+      rgba(179, 71, 0, 0.35),
       rgba(204, 102, 0, 0.35),
       rgba(230, 184, 0, 0.35)
     );
-    border-radius: 12px;
-    border: 1px solid rgba(204, 102, 0, 0.4);
+    border-radius: 10px;
+    border: 1px solid rgba(204, 102, 0, 0.5);
     box-shadow: 
-      inset 0 0 12px rgba(255, 255, 255, 0.08),
-      0 0 20px rgba(179, 71, 0, 0.25),
-      0 5px 12px rgba(0, 0, 0, 0.5);
+      inset 0 0 8px rgba(255, 255, 255, 0.06),
+      0 0 15px rgba(179, 71, 0, 0.25),
+      0 3px 8px rgba(0, 0, 0, 0.4);
     position: relative;
     overflow: hidden;
-    animation: highlight 5s ease-in-out infinite;
+    gap: 15px;
+    min-height: 60px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
   }
 
-  .pasaran-logo-container {
+  /* LOGO KIRI DAN KANAN - SEDIKIT LEBIH KECIL */
+  .pasaran-side-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 9px;
+    border: 2px solid rgba(204, 102, 0, 0.5);
+    box-shadow: 
+      0 0 12px rgba(179, 71, 0, 0.35),
+      inset 0 0 7px rgba(255, 255, 255, 0.1);
+    background: linear-gradient(145deg, 
+      rgba(55, 28, 0, 0.95) 0%, 
+      rgba(75, 38, 0, 0.95) 100%
+    );
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     flex-shrink: 0;
-  }
-
-  .pasaran-logo {
-    width: 50px;
-    height: 50px;
-    border-radius: 8px;
-    border: 1px solid rgba(204, 102, 0, 0.4);
-    box-shadow: 
-      0 0 10px rgba(179, 71, 0, 0.3),
-      inset 0 0 6px rgba(255, 255, 255, 0.1);
-    background-color: rgba(0, 0, 0, 0.2);
-    object-fit: contain;
-    padding: 2px;
-    background: linear-gradient(145deg, 
-      rgba(55, 28, 0, 0.9) 0%, 
-      rgba(75, 38, 0, 0.9) 100%
-    );
     transition: all 0.3s ease;
   }
 
-  .pasaran-logo:hover {
-    transform: scale(1.1);
-    box-shadow: 
-      0 0 15px rgba(204, 102, 0, 0.5),
-      inset 0 0 8px rgba(255, 255, 255, 0.15);
+  .pasaran-side-logo img {
+    width: 88%;
+    height: 88%;
+    object-fit: contain;
+    filter: 
+      drop-shadow(0 0 7px rgba(204, 102, 0, 0.55))
+      drop-shadow(0 0 14px rgba(179, 71, 0, 0.35));
   }
 
+  .pasaran-side-logo:hover {
+    transform: scale(1.12);
+    box-shadow: 
+      0 0 18px rgba(204, 102, 0, 0.7),
+      inset 0 0 9px rgba(255, 255, 255, 0.15);
+  }
+
+  /* NAMA PASARAN DI TENGAH */
   .pasaran-name {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 24px;
+    font-weight: 700;
     color: var(--text-white);
     text-shadow: 
       0 0 10px rgba(204, 102, 0, 0.7),
-      0 0 16px rgba(179, 71, 0, 0.5),
+      0 0 18px rgba(179, 71, 0, 0.5),
       0 0 25px rgba(204, 102, 0, 0.3);
-    letter-spacing: 1.5px;
-    padding: 0 10px; /* Dikurangi agar dekat ke logo */
+    letter-spacing: 1.6px;
+    padding: 0 18px;
     font-family: 'Poppins', sans-serif;
     transition: all 0.3s ease;
     text-align: center;
@@ -316,6 +325,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0;
+    text-transform: uppercase;
+    white-space: nowrap;
   }
 
   .syair-header .date-text {
@@ -348,13 +360,13 @@
   .middle-section { 
     display: flex; 
     flex-direction: column;
-    gap: 20px; 
+    gap: 16px; 
   }
 
   .compass-row {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 12px;
     flex-wrap: wrap;
   }
 
@@ -443,7 +455,7 @@
   .shio-row {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 12px;
     flex-wrap: wrap;
   }
 
@@ -506,12 +518,12 @@
 
   .extra-cards {
     display: flex;
-    gap: 10px;
+    gap: 8px;
   }
 
   .extra-cards .card {
     text-align: center;
-    padding: 15px;
+    padding: 12px;
     min-width: 80px;
     border: 1px solid rgba(204, 102, 0, 0.3);
     background: linear-gradient(145deg, 
@@ -608,7 +620,7 @@
   }
 
   .footer-card {
-    padding: 20px;
+    padding: 16px;
     text-align: center;
     font-size: 14px;
     font-weight: 500;
@@ -627,10 +639,11 @@
     opacity: 0.9;
   }
 
-  /* Responsif untuk tablet */
+  /* RESPONSIF - LOGO SEDIKIT LEBIH KECIL */
+  /* Tablet */
   @media (min-width: 768px) {
     .main-card {
-      padding: 30px;
+      padding: 24px;
       max-width: 700px;
     }
     
@@ -650,7 +663,6 @@
       justify-content: center;
     }
     
-    /* Ukuran font SYAIR TOGEL responsif */
     .syair-header h2 {
       font-size: 26px;
     }
@@ -660,23 +672,26 @@
     }
     
     .pasaran-label {
-      font-size: 16px;
+      font-size: 15px;
+      padding: 5px 15px;
     }
     
     .pasaran-name {
-      font-size: 24px;
+      font-size: 26px;
       min-height: 55px;
-      padding: 0 15px;
+      padding: 0 20px;
     }
     
-    .pasaran-logo {
-      width: 60px;
-      height: 60px;
+    .pasaran-side-logo {
+      width: 65px;
+      height: 65px;
     }
     
     .pasaran-card {
-      padding: 15px;
-      gap: 8px;
+      padding: 10px 20px;
+      min-height: 70px;
+      gap: 20px;
+      max-width: 85%;
     }
     
     .extra-cards {
@@ -703,11 +718,11 @@
     }
   }
 
-  /* Responsif untuk desktop */
+  /* Desktop */
   @media (min-width: 1024px) {
     .main-card {
       max-width: 800px;
-      padding: 35px;
+      padding: 28px;
     }
     
     .compass-card {
@@ -738,7 +753,7 @@
     }
     
     .extra-cards .card {
-      padding: 18px;
+      padding: 15px;
     }
     
     .extra-cards h3 {
@@ -759,39 +774,43 @@
     }
     
     .pasaran-label {
-      font-size: 18px;
+      font-size: 16px;
+      padding: 6px 18px;
     }
     
     .pasaran-name {
-      font-size: 26px;
+      font-size: 28px;
       min-height: 60px;
-      padding: 0 20px;
+      padding: 0 25px;
+      letter-spacing: 1.8px;
     }
     
-    .pasaran-logo {
+    .pasaran-side-logo {
       width: 70px;
       height: 70px;
+      border-radius: 10px;
     }
     
     .pasaran-card {
-      padding: 15px;
-      gap: 10px;
+      padding: 12px 25px;
+      min-height: 75px;
+      gap: 25px;
+      max-width: 80%;
     }
     
-    /* Ukuran font SYAIR TOGEL desktop */
     .syair-header h2 {
       font-size: 28px;
     }
   }
 
-  /* Responsif untuk mobile kecil */
+  /* Mobile kecil */
   @media (max-width: 480px) {
     body {
-      padding: 10px;
+      padding: 8px;
     }
     
     .main-card {
-      padding: 15px;
+      padding: 12px;
       border-radius: 15px;
     }
     
@@ -847,31 +866,55 @@
     
     .pasaran-label {
       font-size: 12px;
+      padding: 3px 10px;
     }
     
     .pasaran-name {
-      font-size: 18px;
-      padding: 0 8px;
+      font-size: 20px;
       min-height: 45px;
+      padding: 0 15px;
     }
     
-    .pasaran-logo {
-      width: 40px;
-      height: 40px;
+    .pasaran-side-logo {
+      width: 50px;
+      height: 50px;
     }
     
     .pasaran-card {
-      padding: 12px;
-      gap: 5px;
+      padding: 7px 14px;
+      min-height: 60px;
+      gap: 14px;
+      max-width: 95%;
     }
     
-    /* Ukuran font SYAIR TOGEL mobile */
     .syair-header h2 {
       font-size: 20px;
     }
   }
 
-  /* Animasi glow background yang lebih redup */
+  /* Mobile sangat kecil */
+  @media (max-width: 360px) {
+    .pasaran-side-logo {
+      width: 45px;
+      height: 45px;
+    }
+    
+    .pasaran-name {
+      font-size: 18px;
+      min-height: 42px;
+      padding: 0 12px;
+    }
+    
+    .pasaran-card {
+      padding: 6px 12px;
+      gap: 12px;
+    }
+    
+    .lapak-logo-img {
+      max-width: 180px;
+    }
+  }
+
   @keyframes glowBackground {
     0% { 
       box-shadow: 
@@ -893,28 +936,6 @@
   .main-card {
     animation: glowBackground 8s ease-in-out infinite;
   }
-
-  /* Animasi untuk perubahan pasaran yang lebih redup */
-  @keyframes highlight {
-    0% { 
-      background: linear-gradient(45deg, 
-        rgba(179, 71, 0, 0.35), 
-        rgba(204, 102, 0, 0.35)
-      );
-    }
-    50% { 
-      background: linear-gradient(45deg, 
-        rgba(204, 102, 0, 0.45), 
-        rgba(230, 115, 0, 0.45)
-      );
-    }
-    100% { 
-      background: linear-gradient(45deg, 
-        rgba(179, 71, 0, 0.35), 
-        rgba(204, 102, 0, 0.35)
-      );
-    }
-  }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
@@ -929,11 +950,19 @@
     </div>
     <div class="pasaran-label">PASARAN</div>
     
-    <!-- CARD PASARAN - PADDING NORMAL, LOGO SANGAT DEKAT -->
+    <!-- CARD PASARAN DENGAN LOGO KIRI KANAN -->
     <div class="pasaran-card">
+      <!-- LOGO PASARAN KIRI -->
+      <div class="pasaran-side-logo" id="pasaranLogoLeft">
+        <img src="" alt="Logo Pasaran Kiri">
+      </div>
+      
+      <!-- NAMA PASARAN DI TENGAH -->
       <div class="pasaran-name" id="pasaranDisplay">MAGNUM4D</div>
-      <div class="pasaran-logo-container">
-        <img src="" alt="Logo Pasaran" class="pasaran-logo" id="pasaranLogo">
+      
+      <!-- LOGO PASARAN KANAN -->
+      <div class="pasaran-side-logo" id="pasaranLogoRight">
+        <img src="" alt="Logo Pasaran Kanan">
       </div>
     </div>
     
@@ -981,10 +1010,10 @@
 </div>
 
 <script>
-  // Data pasaran dengan logo - DIUPDATE SESUAI PERMINTAAN
+  // Data pasaran dengan logo
   const pasaranList = [
     { name: "TOTO MACAU", logo: "https://i.postimg.cc/C5bdxb9B/TOTO-MACAU.png" },
-    { name: "HOKI DRAW", logo: "https://i.postimg.cc/zDMNnMYv/CAMBODIA.png" },
+    { name: "HOKI DRAW", logo: "https://i.postimg.cc/8PhgvmdY/image.png" },
     { name: "SYDNEY LOTTO", logo: "https://i.postimg.cc/jdkNTRfQ/SYDNEY.png" },
     { name: "BRUNEI", logo: "https://i.postimg.cc/mDmHX4y4/image.png" },
     { name: "CHELSEA", logo: "https://i.postimg.cc/nL6GJBsx/CHELSEAA.png" },
@@ -1007,37 +1036,28 @@
     { name: "MAGNUM4D", logo: "https://i.postimg.cc/LXp3Mq2y/MAGNUMM.png" }
   ];
 
-  // Fungsi untuk mendapatkan pasaran acak
   function getRandomPasaran() {
     const randomIndex = Math.floor(Math.random() * pasaranList.length);
     return pasaranList[randomIndex];
   }
 
-  // Fungsi untuk update nama pasaran dan logo
-  function updatePasaran() {
+  function updatePasaranWithSameLogos() {
     const pasaranDisplay = document.getElementById('pasaranDisplay');
-    const pasaranLogo = document.getElementById('pasaranLogo');
-    const pasaranLogoContainer = document.querySelector('.pasaran-logo-container');
+    const leftLogo = document.getElementById('pasaranLogoLeft').querySelector('img');
+    const rightLogo = document.getElementById('pasaranLogoRight').querySelector('img');
     const randomPasaran = getRandomPasaran();
     
+    // Update nama pasaran
     pasaranDisplay.textContent = randomPasaran.name;
     
-    // Tampilkan logo hanya jika pasaran punya logo
-    if (randomPasaran.logo && randomPasaran.logo !== "") {
-      pasaranLogo.src = randomPasaran.logo;
-      pasaranLogo.style.display = 'block';
-      pasaranLogoContainer.style.display = 'flex';
-    } else {
-      // Sembunyikan logo jika pasaran tidak punya logo
-      pasaranLogo.style.display = 'none';
-      pasaranLogoContainer.style.display = 'none';
-    }
+    // Update logo kiri dan kanan dengan logo YANG SAMA
+    leftLogo.src = randomPasaran.logo;
+    rightLogo.src = randomPasaran.logo;
     
-    // Tambahkan efek visual saat berubah
+    // Animasi untuk nama pasaran
     pasaranDisplay.style.animation = 'none';
-    void pasaranDisplay.offsetWidth; // Trigger reflow
+    void pasaranDisplay.offsetWidth;
     
-    // Efek visual
     pasaranDisplay.style.opacity = '0.8';
     
     setTimeout(() => {
@@ -1045,14 +1065,12 @@
     }, 300);
   }
 
-  // Tanggal otomatis
   function updateDate() {
     const today = new Date();
     const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
     document.getElementById('currentDate').innerText = today.toLocaleDateString('id-ID', options);
   }
 
-  // Footer syair
   const footerTexts = [
     `Rajin-rajinlah beribadah<br>Jangan lupa salat<br>Dan perbanyak zakat<br>Untuk bekal akhirat`,
     `Dalam malam yang kelam, rindu membeku<br>Kesedihan menari di antara bayang-bayang<br>`,
@@ -1086,7 +1104,6 @@
     document.getElementById("footer").innerHTML = text;
   }
 
-  // Shio
   const shioData = [
     { name: 'SHIO ULAR', url: 'https://i.postimg.cc/MHf4mQ6T/ular-Photoroom.png', desc: ["SUKA NGINTIP DARI BALIK BATU KAYAK DETEKTIF LICIN","BERGERAK TANPA KAKI","GESIT BANGET","REPTIL BERDARAH DINGIN"] },
     { name: 'SHIO NAGA', url: 'https://i.postimg.cc/cJqYhX3M/naga-Photoroom.png', desc: ["BERSIN API PAS FLU","PUNYA SISIK, SAYAP, TARING, DAN NAFAS API","SIMBOL KEKUATAN DAN KEBERUNTUNGAN","GAGAH DAN PEMBERANI"] },
@@ -1110,7 +1127,6 @@
     document.getElementById("shioImage").style.backgroundImage = `url(${shio.url})`;
   }
 
-  // Compass angka - tanpa animasi
   function randomNumbers() {
     document.getElementById("numTop").innerText = Math.floor(Math.random()*10);
     document.getElementById("numBottom").innerText = Math.floor(Math.random()*10);
@@ -1118,7 +1134,6 @@
     document.getElementById("numRight").innerText = Math.floor(Math.random()*10);
   }
 
-  // BBFS & BEBAS - tanpa animasi
   function updateBBFS() {
     let numbers = '';
     for (let i = 0; i < 7; i++) {
@@ -1133,10 +1148,9 @@
     document.getElementById('bebasNumbers').innerText = `${num1}/${num2}`;
   }
 
-  // Init semua fungsi
   function initializePage() {
     updateDate();
-    updatePasaran(); // Hanya dipanggil saat halaman dimuat
+    updatePasaranWithSameLogos();
     randomShio();
     randomFooter();
     randomNumbers();
@@ -1144,19 +1158,15 @@
     updateBEBAS();
   }
 
-  // Panggil fungsi inisialisasi saat halaman dimuat
   document.addEventListener('DOMContentLoaded', initializePage);
-
-  // HAPUS interval untuk update pasaran otomatis
-  // setInterval(updatePasaran, 5000); // DIKOMENTARI
   
-  // Update angka kompas setiap detik (tapi tanpa animasi)
+  // TETAP ada interval untuk angka random dan BBFS/BEBAS (hanya pasaran yang tidak otomatis ganti)
   setInterval(randomNumbers, 1000);
   
-  // Update BBFS dan BEBAS setiap 3 detik (tapi tanpa animasi)
   setInterval(() => {
     updateBBFS();
     updateBEBAS();
+    // HAPUS BARIS INI: updatePasaranWithSameLogos(); // Pasaran tidak akan ganti otomatis
   }, 3000);
 </script>
 </body>
